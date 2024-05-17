@@ -2,7 +2,7 @@
     background-color: rgba(255, 252, 246, 1);
 }
 
-.formulario-cadastro-doador{
+.formulario-login-doador{
     background-color: rgba(28, 68, 128, 1);
     width: 639px;
     height: 903px;
@@ -15,5 +15,24 @@
 }
 
 .imagem-formulario{
-    
+    width: 280px;
+    height: 250px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.conteudo-do-formulario{
+
+}
+
+.linha-conteudo-form{
+    border: solid 1px white;
+}
+
+.texto{
+    font-family: "Kadwa", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white      ;
 }
