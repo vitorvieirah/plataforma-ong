@@ -17,7 +17,8 @@ body, html {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 85px;
+    margin-bottom: 100px;
+    box-shadow: 2px 2px 2px 2px;
 }
 
 .imagem-formulario{
@@ -89,4 +90,39 @@ body, html {
 
 .header {
     flex: 0 0 auto;
+}
+
+.config-botao-voltar {
+    background-color: rgba(63, 63, 63, 1);
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    color: rgba(126, 126, 126, 1);
+    font-size: 25px;
+    display: block;
+    margin-left: 70px;
+    margin-top: 20px;
+}
+
+.config-botao-voltar:hover{
+    background-color: #555555;
+    cursor: pointer;
+}
+
+.config-botao-voltar:active{
+    background-color: #6B6B6B;
+}
+
+.imagem-botao-voltar{
+    height: 40px;
+    width: 40px;
+}
+
+.hover-botao:hover{
+    background-color: #17BCF1;
+    cursor: pointer;
+}
+
+.hover-botao:active{
+    background-color: #56C6EA;
 }
