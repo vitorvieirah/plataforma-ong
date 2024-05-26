@@ -12,13 +12,13 @@ body, html {
 .formulario-login-doador{
     background-color: rgba(28, 68, 128, 1);
     width: 639px;
-    height: 700px;
+    height: 750px;
     border-radius: 20px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 100px;
-    box-shadow: 2px 2px 2px 2px;
+    margin-bottom: auto;
+    margin-top: auto;
 }
 
 .imagem-formulario{
@@ -81,36 +81,32 @@ body, html {
 .inputs{
     height: 28px;
     border-radius: 5px;
+    padding-left: 5px;
 }
 
 .body-centralizado {
     display: flex;
     flex-direction: column;
 }
-
-.header {
-    flex: 0 0 auto;
-}
-
 .config-botao-voltar {
-    background-color: rgba(63, 63, 63, 1);
+    background-color: rgba(28, 68, 128, 1);
     width: 100px;
     height: 40px;
     border-radius: 20px;
     color: rgba(126, 126, 126, 1);
     font-size: 25px;
     display: block;
-    margin-left: 70px;
+    margin-left: 5px;
     margin-top: 20px;
 }
 
 .config-botao-voltar:hover{
-    background-color: #555555;
+    background-color: #315892;
     cursor: pointer;
 }
 
 .config-botao-voltar:active{
-    background-color: #6B6B6B;
+    background-color: #486ca1;
 }
 
 .imagem-botao-voltar{
@@ -125,4 +121,4 @@ body, html {
 
 .hover-botao:active{
     background-color: #56C6EA;
-}
+} 
