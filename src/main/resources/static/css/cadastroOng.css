@@ -1,5 +1,5 @@
 .formulario-cadastro-ong{
-    height: 650px;
+    height: 640px;
     width: 600px;
     background-color: #1C4480;
     display: block;
@@ -12,14 +12,17 @@
 
 .conteudo-direita{
     display: inline-block;
-    margin-left: 50px;
-    
-    
+    margin-left: 60px;
+    width: 150px;
+    height: 379px;
 }
 
 .conteudo-esquerda{
     display: inline-block;
     margin-left: 160px;
+    width: 150px;
+    height: 379px;
+    margin-top: 80px;
     
 }
 
@@ -28,7 +31,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 80px;
+    margin-top: 10px;
     height: 50px;
     width: 150px;
     font-size: 22px;
@@ -36,7 +39,46 @@
     border-radius: 5px;
 }
 
+.config-botao-voltar {
+    background-color: rgba(28, 68, 128, 1);
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    color: rgba(126, 126, 126, 1);
+    font-size: 25px;
+    display: inline-block;
+    margin-left: 25px;
+    margin-top: 20px;
+}
+
+.config-botao-voltar:hover{
+    background-color: #315892;
+    cursor: pointer;
+}
+
+.config-botao-voltar:active{
+    background-color: #486ca1;
+}
+
+.imagem-botao-voltar{
+    height: 40px;
+    width: 40px;
+}
+
 h1{
     text-align: center;
     color: white;
+    display: inline-block;
+    margin-left: 80px;
+    
 }
+
+label{
+    color: white;
+}
+
+input{
+    height: 18px;
+    border-radius: 3px;
+}
+
