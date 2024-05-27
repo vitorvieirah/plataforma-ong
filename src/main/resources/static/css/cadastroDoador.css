@@ -15,8 +15,8 @@ body, html {
 
 .formulario-cadastro-doador {
     background-color: rgba(28, 68, 128, 1);
-    max-height: 800px; 
     width: 639px;
+    height: 790px;
     border-radius: 20px;
     position: relative;
 }
@@ -54,13 +54,13 @@ body, html {
     color: white;
     padding: 20px 40px;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     width: 559px;
     margin: 50px auto 0; 
     text-align: center;
 }
 
 .form-container h1 {
+    font-weight: bold;
     font-size: 36px;
     margin-bottom: 20px;
     text-align: center;
@@ -74,15 +74,16 @@ body, html {
     width: 100%;
     position: relative;
     top: 50%;
-    padding-left: 140px;
+    padding-left: 136px;
 }
 
 .form-container input {
     width: 280px;
-    padding: 12px;
+    height: 28px;
+    padding-left: 5px;
     margin-bottom: 15px;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     display: block;
     font-size: 16px;
     margin-left: auto;
@@ -91,13 +92,14 @@ body, html {
 
 .separador {
     border: 0;
+    margin-top: 50px;
     border-top: 2px solid #ffffff;
-    margin: 20px 0;
     width: 100%;
 }
 
 .form-container button {
     width: 200px;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(7, 179, 234, 1);
