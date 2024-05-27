@@ -1,0 +1,122 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.body-centralizado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fdfaf6;
+}
+
+.formulario-cadastro-doador {
+    background-color: rgba(28, 68, 128, 1);
+    max-height: 800px; 
+    width: 639px;
+    border-radius: 20px;
+    position: relative;
+}
+
+
+.config-botao-voltar {
+    background-color: rgba(28, 68, 128, 1);
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    color: rgba(126, 126, 126, 1);
+    font-size: 25px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    border:none
+}
+
+.config-botao-voltar:hover {
+    background-color: #315892;
+    cursor: pointer;
+}
+
+.config-botao-voltar:active {
+    background-color: #486ca1;
+}
+
+.imagem-botao-voltar {
+    height: 40px;
+    width: 40px;
+}
+
+.form-container {
+    background-color: rgba(28, 68, 128, 1);;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 559px;
+    margin: 50px auto 0; 
+    text-align: center;
+}
+
+.form-container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container label {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    top: 50%;
+    padding-left: 140px;
+}
+
+.form-container input {
+    width: 280px;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
+    display: block;
+    font-size: 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.separador {
+    border: 0;
+    border-top: 2px solid #ffffff;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.form-container button {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(7, 179, 234, 1);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.form-container button:hover {
+    background-color: #009acd;
+}
+.texto{
+    font-family: "Kadwa", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    font-size: 18px;
+}
