@@ -78,7 +78,8 @@ body, html {
     margin-right: auto;
 }
 
-.inputs{
+input{
+    width: 198px;
     height: 28px;
     border-radius: 5px;
     padding-left: 5px;

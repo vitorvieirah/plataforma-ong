@@ -77,8 +77,8 @@
     cursor: pointer;
 }
 
-.botao-avanca:active{
-    background-color: #000000;
+.botao-avancar:active{
+    background-color: #6fc4e0;
 }
 
 .imagem-botao-voltar{
@@ -96,9 +96,14 @@ label{
     color: white;
 }
 
-input{
-    height: 18px;
-    border-radius: 3px;
+.inputs{
+    width: 198px;
+    height: 28px;
+    border-radius: 5px;
+}
+
+.inputs-radio{
+    
 }
 
 #sec-1 header{
