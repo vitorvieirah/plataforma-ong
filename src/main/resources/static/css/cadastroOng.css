@@ -1,5 +1,5 @@
 .formulario-cadastro-ong{
-    height: 740px;
+    height: 890px;
     width: 600px;
     background-color: #1C4480;
     display: flex;
@@ -38,7 +38,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
+    margin-top: 200px;
     height: 50px;
     width: 150px;
     font-size: 22px;
@@ -93,6 +93,13 @@ h1{
     /* display: inline-block;  */
 }
 
+h2{
+    color: white;
+    font-size: 20px;
+    width: 160px;
+    margin-top: 12px;
+}
+
 label{
     color: white;
 }
@@ -101,6 +108,7 @@ label{
     width: 198px;
     height: 28px;
     border-radius: 5px;
+    padding-left: 5px;
 }
 
 .inputs-radio{
@@ -108,14 +116,15 @@ label{
     height: 13px;
 }
 
+hr{
+    border: solid white 1px; 
+    width: 200px;
+}
+
 #sec-1 header{
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     column-gap: 40px;
-}
-
-#div-site-ong{
-    margin-top: 8px;
 }
 
