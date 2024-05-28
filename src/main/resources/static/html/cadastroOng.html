@@ -19,65 +19,72 @@
             <div class="conteudo-form">
                 <div class="conteudo-esquerda">
                     <div>
-                        <label for="text">Digite o nome fantasia</label>
+                        <label for="nomeFantasia">Digite o nome fantasia</label>
                         <input class="inputs" type="text">
                     </div><br>
                     <div>
-                        <label for="text">Nome empresarial</label>
+                        <label for="nomeEmpresarial">Nome empresarial</label>
                         <input class="inputs" type="text">
                     </div><br>
                     <div>
-                        <label for="text">Nome dos sócios</label>
+                        <label for="nomeDosSocios">Nome dos sócios</label>
                         <input class="inputs" type="text">
                     </div><br>
                     <div>
-                        <label for="text">Forma de doação</label><br>
-                        <input class="inputs-radio" type="radio" name="formaDoacao"> <label for="text">Pix</label><br>
-                        <input class="inputs-radio" type="radio" name="formaDoacao"> <label for="text">Banco</label>
+                        <label for="formaDoacao">Forma de doação</label><br>
+                        <input class="inputs-radio" type="radio" name="formaDoacao" id="doacaoPix" value="pix"> <label for="doacaoPix">Pix</label><br>
+                        <input class="inputs-radio" type="radio" name="formaDoacao"> <label for="text" id="doacaoBanco" value="doacaoBanco" onclick="addBankInputs()">Banco</label>
                     </div><br>
+                    <div id="dadosBanco"></div>
                     <div>
-                        <label for="text">Instagram</label>
+                        <label for="dadosDoacao">Dados doação</label>
                         <input class="inputs" type="text">
                     </div><br>
                     <div>
-                        <label for="text">Facebook</label>
+                        <label for="facebook">Facebook</label>
                         <input class="inputs" type="text">
                     </div><br>
                     <div>
-                        <label for="text">X</label>
+                        <label for="x">X</label>
                         <input class="inputs" type="text">
                     </div>
                 </div>
         
                 <div class="conteudo-direita">
                     <div>
-                        <label for="text">TikTok</label>
+                        <label for="tikTok">TikTok</label>
                         <input class="inputs" type="text">
                     </div><br>
                     <div>
-                        <label for="text">Telefone</label>
+                        <label for="telefone">Telefone</label>
                         <input class="inputs" type="text">
                     </div><br>
                     <div>
-                        <label for="text">Whatsapp</label>
+                        <label for="whatsapp">Whatsapp</label>
                         <input class="inputs" type="text">
                     </div><br>
                     <div>
-                        <label for="text">Endereço</label>
+                        <label for="endereco">Endereço</label>
                         <input class="inputs" type="text">
                     </div><br>
                     <div id="div-site-ong">
-                        <label for="text">Site da ong</label>
+                        <label for="siteOng">Site da ong</label>
                         <input class="inputs" type="text">
                     </div><br>
                     <div>
-                        <label for="text">Senha</label>
+                        <label for="senha">Senha</label>
                         <input class="inputs" type="text">
                     </div><br>
+                    <div>
+                        <label for="instagram">Instagram</label>
+                        <input class="inputs" type="text">
+                    </div>
                 </div><br>
             </div>
             <button type="button" class="botao-avancar">Avançar</button>
         </div>
     </section>
+
+    <script src="../js/cadastroONG.js"></script>
 </body>
 </html>
