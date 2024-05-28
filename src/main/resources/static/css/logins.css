@@ -43,7 +43,6 @@ body, html {
 
 .texto{
     font-family: "Kadwa", serif;
-    font-weight: 400;
     font-style: normal;
     color: white;
     font-size: 18px;
@@ -72,9 +71,9 @@ body, html {
 }
 
 .tamanho-div{
-    width: 200px;
+    width: 220px;
     display: block;
-    margin-left: auto;
+    margin-left: 217px;
     margin-right: auto;
 }
 
