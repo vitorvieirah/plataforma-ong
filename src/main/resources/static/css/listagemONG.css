@@ -64,6 +64,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 27px;
 }
 
 .imagem-botao-ordenar{
@@ -74,10 +75,24 @@ header {
     margin-left: 5px;
 }
 
+.position-input{
+    display: inline-block;
+}
+
+.position-button-ordenar{
+    display: inline-block;
+}
+
+.pesquisa-listagem{
+    display: block;
+    margin-top: 70px;
+    margin-left: 200px;
+}
+
 input{
     border: solid 1px #B5B5B5;
     border-radius: 5px;
-    height: 18px;
+    height: 25px;
 }
 
 body{
