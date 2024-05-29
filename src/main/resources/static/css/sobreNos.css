@@ -1,20 +1,89 @@
- #banner-sobre-nos{
-    height: 345.8px;
-    display:     block;
+html{
+    font-family: "Inter", sans-serif;
 }
 
-
-#banner-sobre-nos img{
-    width: 100%;    
-    position: fixed;
-    z-index: -1;
+#quem-somos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 20px;
+    padding: 30px;
 }
-#banner-sobre-nos p{
-    font-family: "Azeret Mono", monospace;
+
+#elements-qs{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#textos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    row-gap: 20px;
+    width: 65%;
+}
+
+#quem-somos h2{
+    color: #1C4480;
+    font-size: 2.5rem;
+}
+
+#textos p{
+    font-size: 1.1rem;
+}
+
+#nosso-obj{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+#textos-obj{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+}
+
+#textos-obj h2{
+    color: #1C4480;
+    font-size: 2.5rem;
+}
+
+#textos-obj p{
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+#nosso-grupo{
     width: 300px;
-    position: relative;
-    font-size: x-large;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 30px;
+    padding: 20px;
+    background-color: #EEEEEE;
+}
+
+footer p{
+    font-weight: 500;
+    width: 40%;
     text-align: center;
-    left: 90px;
-    top: 90px;
+}
+
+#copy-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#copy-logo span{
+    font-size: 0.5rem;
 }
