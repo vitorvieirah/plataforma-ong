@@ -1,0 +1,294 @@
+html{
+    font-family: "Inter", sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Header */
+header {
+    background-color: #1C4480;
+    box-shadow: 0px 3px 10px #464646;
+    font-family: "Kadwa", serif;
+}
+
+header nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 100px;
+}
+
+.nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    column-gap: 2rem;
+}
+
+.nav-item{
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+.nav-item:hover{
+    background-color: #315892;
+    border-radius: 15px;
+}
+
+.login-button{
+    border: none;
+    padding: 0 5px;
+    margin: 20px 10px;
+    border-radius: 5px;
+    background-color: #07B3EA;
+}
+
+.login-button a {
+    font-size: 1rem;
+    font-family: "Kadwa", serif;
+}
+
+.login-button:hover{
+    background-color: #56c2e6;
+}
+
+/* Imagem */
+.intro-img{
+    width: 100%;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 3px 25px rgb(83, 83, 83);
+}
+
+.grid-container {
+    display: grid;
+    width: auto;
+    height: 760px;
+    grid-template-rows: 736px;
+    grid-template-columns: 100%;
+    overflow: hidden;
+}
+
+.grid-container img {
+    grid-area: 1 / 1 / 2 / 2;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* Seção 1 */
+.secao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+#sec-1{
+    flex-direction: column;
+    row-gap: 4.5rem;
+}
+
+#sec-1 h2{
+    color: #1C4480;
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    font-family: "Hammersmith One", sans-serif;
+}
+
+.doacao-importante-p{
+    width: 75%;
+    font-size: 1.35rem;
+    text-align: center;
+}
+
+.beneficios{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 55%;
+    column-gap: 2rem;
+}
+
+.beneficios span{
+    font-size: 5rem;
+    color: #1C4480;
+    font-weight: bold;
+    font-family: 'Andada Pro', sans-serif;
+}
+
+.beneficios p{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Seção 2 */
+
+#sec-2{
+    display: flex;
+    background-color: #d9d9d9;
+    flex-direction: column;
+    row-gap: 4.5rem;
+    padding: 40px 0;
+    box-shadow: 0px 20px 40px rgb(196, 196, 196);
+    border-radius: 20px 20px 0 0;
+}
+
+#sec-2 h2{
+    letter-spacing: 1px;
+    font-size: 2.4rem;
+    font-family: "Hammersmith One", sans-serif;
+}
+
+.cadastro-ong-texto{
+    width: 75%;
+    font-size: 1.35rem;
+    text-align: center;
+}
+
+.motivos{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 55%;
+    column-gap: 2rem;
+}
+
+.motivos span{
+    font-weight: bold;
+    font-size: 5rem;
+    font-family: 'Andada Pro', sans-serif;
+}
+
+.motivos p{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.botao-participar{
+    padding: 7px 40px;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    background-color: #07B3EA;
+    font-size: large;
+    font-weight: bolder;
+}
+
+/* Seção 3 */
+
+#sec-3{
+    justify-content: space-between;
+}
+
+#sec-3 img{
+    margin: 0 auto;
+}
+
+#sobre-nos-texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #c7f1ff;
+    padding: 15px;
+    width: 60%;
+    border-radius: 0 20px 20px 0;
+}
+
+#sobre-nos-texto h2{
+    font-size: 2.2rem;
+    font-family: "Hammersmith One", sans-serif;
+}
+
+#sobre-nos-texto p{
+    width: 90%;
+    font-size: 1.1rem;
+}
+
+#botao-direita{
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 0 auto;
+}
+
+.botao-veja-mais{
+    border: none;
+    border-radius: 10px;
+    padding: 7px 40px;
+    font-size: larger;
+    font-weight: bold;
+    background-color: #07B3EA;
+    color: white;
+}
+
+/* Rodapé */
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+    font-family: "Inter";
+    color: white;
+    background-color: #1C4480;
+    padding: 20px;
+}
+
+footer hr{
+    height: 10rem;
+}
+
+footer img{
+    width: 150px;
+    height: 120px;
+}
+
+.mapa{
+    display: flex;
+    flex-direction: column;
+    row-gap: 9px;
+    width: max-content;
+    padding: 10px;
+}
+
+.mapa ul{
+    list-style: circle;
+}
+
+.mapa figure{
+    display: flex;
+    flex-direction: row;
+    column-gap: 5px;
+}
+
+.social-img{
+    width: 38px;
+    height: 35px;
+}
+
+.apoie-footer{
+    width: 80%;
+    font-size: large;
+    text-align: center;
+}
+
+.direitos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: medium;
+    row-gap: 10px;
+    width: 80%;
+}
