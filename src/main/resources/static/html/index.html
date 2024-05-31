@@ -52,8 +52,11 @@
             <div>
                 <select name="login" id="login-select" onchange="redirecionar(this)">
                     <option disabled selected>Sou Cadastrado</option>
-                    <option value="ong">ONG</option>
-                    <option value="">Doador</option>
+                    <optgroup label="Login">
+                        <option value="ong">ONG</option>
+                        <option value="doador">Doador</option>
+                    </optgroup>
+                    
                 </select>
                 <button class="cadastro-button"><a href="../html/getwayCadastro.html">Quero começar</a></button>
             </div>
