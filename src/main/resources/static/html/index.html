@@ -35,13 +35,29 @@
 <body>
     <header>
         <nav>
-            <img src="../img/logo do site.png" class="logo">
+            <div class="logo">
+                <img src="../img/logo do site.png" >
+                <select name="" id="invisivel">
+                    <option value="">DOADORDOADORDOADOR</option>
+                </select>
+            </div>
+
+            
             <ul class="nav-list">
                 <li class="nav-item"><a href="../html/index.html">Home</a></li>
                 <li class="nav-item"><a href="">ONGs</a></li>
                 <li class="nav-item"><a href="">Sobre Nós</a></li>
             </ul>
-            <button class="login-button"><a href="#">Quero participar</a></button>
+
+            <div>
+                <select name="login" id="login-select" onchange="redirecionar(this)">
+                    <option disabled selected>Sou Cadastrado</option>
+                    <option value="ong">ONG</option>
+                    <option value="">Doador</option>
+                </select>
+                <button class="cadastro-button"><a href="../html/getwayCadastro.html">Quero começar</a></button>
+            </div>
+            
         </nav>
     </header>
 
@@ -128,7 +144,8 @@
             <h3>Direitos autorais e usos de imagem</h3>
             <p>Amigos do ONGSolidarity declara, para todos os fins de Direito que, todas as suas fotografias, vídeos e outras produções audiovisuais que envolvam suas imagens, logotipos ou quaisquer signos distintivos minimamente identificáveis são de sua exclusiva propriedade, não sendo permitida a utilização, por qualquer Terceiro, independentemente da finalidade e meio escolhido, sem a prévia e expressa autorização por escrito.</p>
         </div>
-        
     </footer>
+
+    <script src="../js/index.js"></script>
 </body>
 </html>

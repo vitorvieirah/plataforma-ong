@@ -25,8 +25,20 @@ header nav{
 }
 
 .logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.logo img{
     width: 100px;
 }
+
+#invisivel{
+    visibility: hidden;
+}
+
 
 .nav-list{
     display: flex;
@@ -46,7 +58,16 @@ header nav{
     border-radius: 15px;
 }
 
-.login-button{
+#login-select{
+    padding: 0 5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: "Kadwa", serif;
+    color: white;
+    background-color: #006cf8;
+}
+
+.cadastro-button{
     border: none;
     padding: 0 5px;
     margin: 20px 10px;
@@ -54,12 +75,12 @@ header nav{
     background-color: #07B3EA;
 }
 
-.login-button a {
+.cadastro-button a {
     font-size: 1rem;
     font-family: "Kadwa", serif;
 }
 
-.login-button:hover{
+.cadastro-button:hover{
     background-color: #56c2e6;
 }
 
@@ -246,7 +267,8 @@ footer{
 }
 
 footer hr{
-    height: 10rem;
+    height: 11rem;
+    border: solid 1px #ffffff;
 }
 
 footer img{

@@ -5,6 +5,10 @@ body, html {
     width: 100%;
 }
 
+a{
+    text-decoration: none;
+}
+
 .cor-de-fundo{
     background-color: rgba(255, 252, 246, 1);
 }
