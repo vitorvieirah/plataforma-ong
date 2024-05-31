@@ -1,0 +1,129 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cor-de-fundo {
+    background-color: white;
+}
+
+.formulario-getway-doador {
+    background-color: #1c4480;
+    width: 450px; 
+    height: 600px; 
+    border-radius: 20px;
+    display: block;
+    padding-top: 20px;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+    margin-top: -80px;
+}
+
+.imagem-formulario {
+    width: 190px; 
+    height: 180px; 
+    display: block;
+    margin-left: 130px;
+    margin-top: -25px
+}
+
+.labels-inputs {
+    text-align: left;
+}
+
+.linha-conteudo-form {
+    display: block;
+    margin-top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    border: solid 1px white;
+}
+
+.texto {
+    font-family: "Kadwa", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+}
+
+.config-botao1 {
+    background-color: #07b3ea;
+    display: block;
+    margin-left: 105px;
+    position: absolute;
+    width: 250px;
+    height: 60px;
+    border-radius: 5px;
+    font-size: 25px;
+    margin-top: 18px;
+}
+
+.config-botao2 {
+    background-color: #07b3ea;
+    display: block;
+    margin-left: 105px;
+    width: 250px;
+    height: 60px;
+    position: absolute;
+    border-radius: 5px;
+    font-size: 25px;
+    margin-top: 45px; 
+}
+
+.hover-botao:hover {
+    background-color: #17bcf1;
+    cursor: pointer;
+}
+
+.hover-botao:active {
+    background-color: #56c6ea;
+}
+
+.config-botao-voltar {
+    background-color: #1c4480; 
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    display: block;
+    top: 125px;
+    margin-left: 26px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.imagem-botao-voltar {
+    height: 40px;
+    width: 40px;
+}
+
+.body-centralizado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.config-botao-voltar:hover{
+    background-color: #315892;
+    cursor: pointer;
+}
+
+.config-botao-voltar:active{
+    background-color: #486ca1;
+}
+.conteudo-div{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
