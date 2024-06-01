@@ -59,12 +59,12 @@ header {
 
 .botao-ordenar{
     background-color: #FFFFFF;
-    border: solid 1px #B5B5B5;
-    border-radius: 5px;
+    border: solid 2px #B5B5B5;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 27px;
+    height: 29px;
 }
 
 .imagem-botao-ordenar{
@@ -95,26 +95,25 @@ header {
     border-radius: 10px;
 }
 
-.conteudo-ong{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
 .sobre-ong{
-    margin-left: 40px;
-    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;    
+    width: 1200px;
 }
 
 .botao-ver-mais{
     height: 30px;
-    margin-left: 200px; 
-    margin-top: auto;
-    margin-bottom: 25px;
     background-color: #1C4480;
     color: white;
     width: 90px;
     border-radius: 10px;
+}
+
+.div-botao-ver-mais{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 180px;
 }
 
 .botao-ver-mais:hover{
@@ -126,6 +125,13 @@ header {
     background-color: #3c5981;
 }
 
+td{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
 p{
     margin-top: 10px;
     width: 550px;
@@ -135,18 +141,20 @@ table{
     width: 100%;
     border: solid 1px;
     height: 200px;
-    margin-top: 10px;
+    margin-top: 30px;
     background-color: #C7F1FF;
 }
 
 tr{
-    border: solid 1px;
+    padding: 0;
 }
 
 input{
-    border: solid 1px #B5B5B5;
-    border-radius: 5px;
+    border: solid 2px #B5B5B5;
+    border-radius: 10px;
     height: 25px;
+    width: 250px;
+    padding: 0 5px 0 5px;
 }
 
 body{
