@@ -1,0 +1,92 @@
+header {
+    background-color: #1C4480;
+    box-shadow: 0px 3px 10px #464646;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    background-color: #1C4480;
+    box-shadow: 0px 3px 10px #464646;
+    font-family: "Kadwa", serif;
+}
+
+header nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.logo img{
+    width: 100px;
+}
+
+#invisivel{
+    visibility: hidden;
+}
+
+
+.nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    column-gap: 2rem;
+}
+
+.nav-item{
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+.nav-item:hover{
+    background-color: #315892;
+    border-radius: 15px;
+}
+
+#login-select{
+    padding: 0 5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: "Kadwa", serif;
+    color: white;
+    background-color: #006cf8;
+}
+
+.cadastro-button{
+    border: none;
+    padding: 0 5px;
+    margin: 20px 10px;
+    border-radius: 5px;
+    background-color: #07B3EA;
+}
+
+.cadastro-button a {
+    font-size: 1rem;
+    font-family: "Kadwa", serif;
+}
+
+.cadastro-button:hover{
+    background-color: #56c2e6;
+}
+
+/* Imagem */
+.intro-img{
+    width: 100%;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 3px 25px rgb(83, 83, 83);
+}
