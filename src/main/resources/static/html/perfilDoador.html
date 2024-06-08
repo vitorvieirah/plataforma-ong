@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Doador</title>
+    <link rel="stylesheet" href="../css/perfilDoador.css">
+    <link rel="stylesheet" href="../css/reset.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo do site.png" alt="ONGSolidarity">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">ONGs</a></li>
+                <li><a href="#">Sobre nós</a></li>
+            </ul>
+        </nav>
+        <div class="icone-usuario">
+            <img src="../img/usericon.png" alt="Icone do Usuário">
+        </div>
+    </header>
+    <main>
+        <h1>Seja bem-vindo, Nome.</h1>
+        <div class="cartao-perfil">
+            <div class="foto-perfil"></div>
+            <div class="info-perfil">
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" value="Nome do Usuário" readonly>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" value="email@exemplo.com" readonly>
+                </div>
+                <div>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" value="(00) 00000-0000" readonly>
+                </div>
+                <div>
+                    <label for="cpf">CPF:</label>
+                    <input type="text" id="cpf" value="000.000.000-00" readonly>
+                </div>
+                <div>
+                    <label for="dataNascimento">Aniversário:</label>
+                    <input type="date" id="dataNascimento" value="2000-01-01" readonly>
+                </div>
+                <button id="editar-btn">Alterar</button>
+                <button id="salvar-btn" style="display:none;">Salvar</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="conteudo-footer">
+            <div class="logo-footer">
+                <img src="../img/logo-preta.png" alt="ONGSolidarity">
+            </div>
+            <div class="texto-footer">
+                <p>Juntos, podemos transformar vidas e fazer a diferença!<br>
+                Faça parte desta corrente de solidariedade.</p>
+            </div>
+            <div class="suporte-footer">
+                <p>Apoie as ONGs<br>
+                que estão mudando o mundo com amor e dedicação.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/perfilDoador.js"></script>
+</body>
+</html>
