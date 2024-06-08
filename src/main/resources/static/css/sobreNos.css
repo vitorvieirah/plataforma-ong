@@ -1,0 +1,201 @@
+html{
+    font-family: "Inter", sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Headers */
+header {
+    background-color: #1C4480;
+    box-shadow: 0px 3px 10px #464646;
+    font-family: "Kadwa", serif;
+}
+
+header nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+.logo img{
+    width: 100px;
+}
+
+#invisivel{
+    visibility: hidden;
+}
+
+
+.nav-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    column-gap: 2rem;
+}
+
+.nav-item{
+    padding: 10px;
+    font-size: 1.1rem;
+}
+
+.nav-item:hover{
+    background-color: #315892;
+    border-radius: 15px;
+}
+
+#login-select{
+    padding: 0 5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: "Kadwa", serif;
+    color: white;
+    background-color: #006cf8;
+}
+
+.cadastro-button{
+    border: none;
+    padding: 0 5px;
+    margin: 20px 10px;
+    border-radius: 5px;
+    background-color: #07B3EA;
+}
+
+.cadastro-button a {
+    font-size: 1rem;
+    font-family: "Kadwa", serif;
+}
+
+.cadastro-button:hover{
+    background-color: #56c2e6;
+}
+
+
+/* Imagens */
+.intro-img{
+    width: 100%;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 3px 25px rgb(83, 83, 83);
+}
+
+.grid-container {
+    display: grid;
+    width: auto;
+    height: 530px;
+    grid-template-rows: 500px;
+    grid-template-columns: 100%;
+}
+
+.grid-container img {
+    grid-area: 1 / 1 / 2 / 2;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Seções */
+#quem-somos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 20px;
+    padding: 30px;
+}
+
+#elements-qs{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#textos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    row-gap: 20px;
+    width: 65%;
+}
+
+#quem-somos h2{
+    color: #1C4480;
+    font-size: 2.5rem;
+}
+
+#textos p{
+    font-size: 1.1rem;
+}
+
+#nosso-obj{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+#textos-obj{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+}
+
+#textos-obj h2{
+    color: #1C4480;
+    font-size: 2.5rem;
+}
+
+#textos-obj p{
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+#nosso-grupo{
+    width: 300px;
+}
+
+/* Footer */
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 30px;
+    padding: 10px;
+    background-color: #EEEEEE;
+}
+
+.juntos-p{
+    display: flex;
+    flex-direction: row;
+    font-weight: 500;
+    width: 40%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-width{
+    width: 70px;
+}
+
+#copy-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#copy-logo span{
+    font-size: 0.45rem;
+}
