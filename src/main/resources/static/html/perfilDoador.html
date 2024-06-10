@@ -6,22 +6,33 @@
     <title>Perfil do Doador</title>
     <link rel="stylesheet" href="../css/perfilDoador.css">
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/footerPadrao.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/perfilHeader.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="../img/logo do site.png" alt="ONGSolidarity">
-        </div>
         <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">ONGs</a></li>
-                <li><a href="#">Sobre nós</a></li>
+            <div class="logo">
+                <img src="../img/logo do site.png" >
+                <select name="" id="invisivel">
+                    <option value="">DOADORDOADORDOADOR</option>
+                </select>
+            </div>
+
+            
+            <ul class="nav-list">
+                <li class="nav-item"><a href="../html/index.html">Home</a></li>
+                <li class="nav-item"><a href="">ONGs</a></li>
+                <li class="nav-item"><a href="">Sobre Nós</a></li>
             </ul>
+
+            <div class="perfil-centro">
+                <button class="button-perfil">
+                    <a href=""></a>
+                </button>
+            </div>
         </nav>
-        <div class="icone-usuario">
-            <img src="../img/usericon.png" alt="Icone do Usuário">
-        </div>
     </header>
     <main>
         <h1>Seja bem-vindo, Nome.</h1>
@@ -54,18 +65,19 @@
         </div>
     </main>
     <footer>
-        <div class="conteudo-footer">
-            <div class="logo-footer">
-                <img src="../img/logo-preta.png" alt="ONGSolidarity">
-            </div>
-            <div class="texto-footer">
-                <p>Juntos, podemos transformar vidas e fazer a diferença!<br>
-                Faça parte desta corrente de solidariedade.</p>
-            </div>
-            <div class="suporte-footer">
-                <p>Apoie as ONGs<br>
-                que estão mudando o mundo com amor e dedicação.</p>
-            </div>
+        <div id="copy-logo">
+            <img src="../img/logo do site black.png" class="img-width">
+            <span>Copyright © 2024 ONGSolidarity.</span>
+        </div>
+
+        <div class="juntos-p">
+            <p>Juntos, podemos transformar vidas e fazer a diferença! Faça parte desta corrente de solidariedade.
+            </p>
+        </div>
+        
+        <div class="juntos-p">
+            <p>Apoie as ONGs que estão mudando o mundo com amor e dedicação.</p>
+    
         </div>
     </footer>
     <script src="../js/perfilDoador.js"></script>

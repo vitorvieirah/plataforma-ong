@@ -7,80 +7,6 @@ a{
     color: white;
 }
 
-/* Headers */
-header {
-    background-color: #1C4480;
-    box-shadow: 0px 3px 10px #464646;
-    font-family: "Kadwa", serif;
-}
-
-header nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.logo{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
-}
-
-.logo img{
-    width: 100px;
-}
-
-#invisivel{
-    visibility: hidden;
-}
-
-
-.nav-list{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    column-gap: 2rem;
-}
-
-.nav-item{
-    padding: 10px;
-    font-size: 1.1rem;
-}
-
-.nav-item:hover{
-    background-color: #315892;
-    border-radius: 15px;
-}
-
-#login-select{
-    padding: 0 5px;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-family: "Kadwa", serif;
-    color: white;
-    background-color: #006cf8;
-}
-
-.cadastro-button{
-    border: none;
-    padding: 0 5px;
-    margin: 20px 10px;
-    border-radius: 5px;
-    background-color: #07B3EA;
-}
-
-.cadastro-button a {
-    font-size: 1rem;
-    font-family: "Kadwa", serif;
-}
-
-.cadastro-button:hover{
-    background-color: #56c2e6;
-}
-
-
 /* Imagens */
 .intro-img{
     width: 100%;
@@ -165,37 +91,4 @@ header nav{
 
 #nosso-grupo{
     width: 300px;
-}
-
-/* Footer */
-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    column-gap: 30px;
-    padding: 10px;
-    background-color: #EEEEEE;
-}
-
-.juntos-p{
-    display: flex;
-    flex-direction: row;
-    font-weight: 500;
-    width: 40%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-
-.img-width{
-    width: 70px;
-}
-
-#copy-logo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-#copy-logo span{
-    font-size: 0.45rem;
 }

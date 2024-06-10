@@ -1,0 +1,31 @@
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 30px;
+    padding: 10px;
+    background-color: rgba(238, 238, 238, 1);
+}
+
+.juntos-p{
+    display: flex;
+    flex-direction: row;
+    font-weight: 500;
+    width: 40%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-width{
+    width: 70px;
+}
+
+#copy-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#copy-logo span{
+    font-size: 0.45rem;
+}

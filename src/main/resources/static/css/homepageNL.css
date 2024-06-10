@@ -11,79 +11,6 @@ a{
     color: white;
 }
 
-/* Header */
-header {
-    background-color: #1C4480;
-    box-shadow: 0px 3px 10px #464646;
-    font-family: "Kadwa", serif;
-}
-
-header nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.logo{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
-}
-
-.logo img{
-    width: 100px;
-}
-
-#invisivel{
-    visibility: hidden;
-}
-
-
-.nav-list{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
-    column-gap: 2rem;
-}
-
-.nav-item{
-    padding: 10px;
-    font-size: 1.1rem;
-}
-
-.nav-item:hover{
-    background-color: #315892;
-    border-radius: 15px;
-}
-
-#login-select{
-    padding: 0 5px;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-family: "Kadwa", serif;
-    color: white;
-    background-color: #006cf8;
-}
-
-.cadastro-button{
-    border: none;
-    padding: 0 5px;
-    margin: 20px 10px;
-    border-radius: 5px;
-    background-color: #07B3EA;
-}
-
-.cadastro-button a {
-    font-size: 1rem;
-    font-family: "Kadwa", serif;
-}
-
-.cadastro-button:hover{
-    background-color: #56c2e6;
-}
-
 /* Imagem */
 .intro-img{
     width: 100%;
@@ -206,6 +133,15 @@ header nav{
     font-weight: bolder;
 }
 
+.botao-participar:hover{
+    background-color: #41bbe4;
+    cursor: pointer;
+}
+
+.botao-participar:active{
+    background-color: #6fc6e4;
+}
+
 /* Seção 3 */
 
 #sec-3{
@@ -253,64 +189,11 @@ header nav{
     color: white;
 }
 
-/* Rodapé */
-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    column-gap: 30px;
-    font-family: "Inter";
-    color: white;
-    background-color: #1C4480;
-    padding: 20px;
+.botao-veja-mais:hover{
+    background-color: #41bbe4;
+    cursor: pointer;
 }
 
-footer hr{
-    height: 11rem;
-    border: solid 1px #ffffff;
-}
-
-footer img{
-    width: 150px;
-    height: 120px;
-}
-
-.mapa{
-    display: flex;
-    flex-direction: column;
-    row-gap: 9px;
-    width: max-content;
-    padding: 10px;
-}
-
-.mapa ul{
-    list-style: circle;
-}
-
-.mapa figure{
-    display: flex;
-    flex-direction: row;
-    column-gap: 5px;
-}
-
-.social-img{
-    width: 38px;
-    height: 35px;
-}
-
-.apoie-footer{
-    width: 80%;
-    font-size: large;
-    text-align: center;
-}
-
-.direitos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: medium;
-    row-gap: 10px;
-    width: 80%;
+.botao-veja-mais:active{
+    background-color: #6fc6e4;
 }
