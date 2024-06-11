@@ -19,82 +19,84 @@
                 </a>
                 <h1>CADASTRO</h1>
             </header>
-            <div class="conteudo-form">
-                <div class="conteudo-esquerda">
-                    <div>
-                        <label for="nomeFantasia">Digite o nome fantasia</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
-                        <label for="nomeEmpresarial">Nome empresarial</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
-                        <label for="nomeDosSocios">Nome do dono</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div style="margin-top: px;">
-                        <label for="dadosDoacao">Dados doação</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
-                        <label for="facebook">Facebook</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
-                        <label for="senha">Senha</label>
-                        <input class="inputs" type="password">
-                    </div><br>
-                    <div>
-                        <label for="instagram">Instagram</label>
-                        <input class="inputs" type="text">
-                    </div>
-                    <div style="margin-top: 17px;">
-                        <label for="x">X</label>
-                        <input class="inputs" type="text">
-                    </div>
-                </div>
-        
-                <div class="conteudo-direita">
-                    <div>
-                        <label for="tikTok">TikTok</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
-                        <label for="telefone">Telefone</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
-                        <label for="whatsapp">Whatsapp</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
-                        <label for="endereco">Endereço</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div id="div-site-ong">
-                        <label for="siteOng">Site da ong</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <h2>Formas de doação</h2>
-                    <hr>
-                    <div style="margin-top: 27px;">
-                        <label for="pix">Pix</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
+            <form id="ongForm">
+                <div class = "conteudo-form">
+                    <div class="conteudo-esquerda">
                         <div>
-                            <label for="agencia">Agencia</label>
-                            <input class="inputs" type="text">
+                            <label for="nomeFantasia">Digite o nome fantasia</label>
+                            <input class="inputs" type="text" id="nomeFantasia-ong">
+                        </div><br>
+                        <div>
+                            <label for="nomeEmpresarial">Nome empresarial</label>
+                            <input class="inputs" type="text" id="nomeEmpresarial-ong">
+                        </div><br>
+                        <div>
+                            <label for="nomeDosSocios">Nome do dono</label>
+                            <input class="inputs" type="text" id="nomeDono-ong">
+                        </div><br>
+                        <div>
+                            <label for="facebook">Facebook</label>
+                            <input class="inputs" type="text" id="facebook-ong">
+                        </div><br>
+                        <div>
+                            <label for="senha">Senha</label>
+                            <input class="inputs" type="password" id="senha-ong">
+                        </div><br>
+                        <div>
+                            <label for="instagram">Instagram</label>
+                            <input class="inputs" type="text" id="instagram-ong">
                         </div>
-                        <div style="margin-top: 18px;">
-                            <label for="numeroConta">Numero da conta</label>
-                            <input class="inputs" type="text">
+                        <div style="margin-top: 17px;">
+                            <label for="x">X</label>
+                            <input class="inputs" type="text" id="x-ong">
+                        </div>
+                        <div style="margin-top: 20px;">
+                            <label for="imageUpload">Escolha uma imagem da sua ong:</label>
+                            <input type="file" id="imageUpload" name="image" accept="image/*" class="input-img">
                         </div>
                     </div>
-                </div><br>
-            </div>
-            <button type="button" class="botao-avancar">Avançar</button>
+            
+                    <div class="conteudo-direita">
+                        <div>
+                            <label for="tikTok">TikTok</label>
+                            <input class="inputs" type="text" id="tiktok-ong">
+                        </div><br>
+                        <div>
+                            <label for="telefone">Telefone</label>
+                            <input class="inputs" type="text" id="telefone-ong">
+                        </div><br>
+                        <div>
+                            <label for="whatsapp">Whatsapp</label>
+                            <input class="inputs" type="text" id="whatsapp-ong">
+                        </div><br>
+                        <div>
+                            <label for="endereco">Endereço</label>
+                            <input class="inputs" type="text" id="endereco-ong">
+                        </div><br>
+                        <div id="div-site-ong">
+                            <label for="siteOng">Site da ong</label>
+                            <input class="inputs" type="text" id="siteOng-ong">
+                        </div><br>
+                        <h2>Formas de doação</h2>
+                        <hr>
+                        <div style="margin-top: 27px;">
+                            <label for="pix">Pix</label>
+                            <input class="inputs" type="text" id="pix-ong">
+                        </div><br>
+                        <div>
+                            <div>
+                                <label for="agencia">Agencia</label>
+                                <input class="inputs" type="text" id="agencia-ong">
+                            </div>
+                            <div style="margin-top: 18px;">
+                                <label for="numeroConta">Numero da conta</label>
+                                <input class="inputs" type="text" id="numConta-ong">
+                            </div>
+                        </div>
+                    </div><br>
+                </div>
+                <button type="submit" class="botao-avancar">Cadastrar</button>
+            </form>
         </div>
     </section>
 

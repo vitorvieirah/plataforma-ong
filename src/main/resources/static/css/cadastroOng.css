@@ -1,3 +1,18 @@
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.preview {
+    margin-top: 20px;
+}
+
+.preview img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
 .formulario-cadastro-ong{
     height: 890px;
     width: 600px;
@@ -13,7 +28,7 @@
 .conteudo-form{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    gap: 120px;
     align-items: center;
     margin-right: 30px;
 }
@@ -102,6 +117,7 @@ h2{
 
 label{
     color: white;
+    font-size: 18px;
 }
 
 .inputs{

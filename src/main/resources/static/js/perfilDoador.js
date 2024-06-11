@@ -1,3 +1,7 @@
+window.onload = function() {
+    //puxa as informações do localstorage
+};
+
 document.addEventListener('DOMContentLoaded', function() {
     const editarBtn = document.getElementById('editar-btn');
     const salvarBtn = document.getElementById('salvar-btn');
