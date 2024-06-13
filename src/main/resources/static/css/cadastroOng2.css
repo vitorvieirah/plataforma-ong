@@ -1,0 +1,85 @@
+textarea{
+    width: 500px;
+    padding: 5px;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+label{
+    color: white;
+    font-size: 18px;
+}
+
+.formulario-cadastro-ong{
+    height: 920px;
+    width: 600px;
+    background-color: #1C4480;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    border-radius: 10px;
+    row-gap: 60px;
+    margin-top: 120px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botao-proximo{
+    background-color: #07B3EA;
+    height: 50px;
+    width: 150px;
+    font-size: 22px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 60px;
+}
+
+.botao-proximo:hover{
+    background-color: #4cc0e7;
+    cursor: pointer;
+}
+
+.botao-proximo:active{
+    background-color: #95d1e6;
+}
+
+.config-botao-voltar {
+    background-color: rgba(28, 68, 128, 1);
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    color: rgba(126, 126, 126, 1);
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.config-botao-voltar:hover{
+    background-color: #315892;
+    cursor: pointer;
+}
+
+.config-botao-voltar:active{
+    background-color: #486ca1;
+}
+
+.imagem-botao-voltar{
+    height: 40px;
+    width: 40px;
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+.div-label-textarea{
+    width: 510px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

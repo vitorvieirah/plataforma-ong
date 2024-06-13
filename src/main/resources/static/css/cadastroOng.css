@@ -1,7 +1,17 @@
 form{
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    align-items: center;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a{
+    text-decoration: none;
 }
 
 .preview {
@@ -19,46 +29,51 @@ form{
     background-color: #1C4480;
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
     border-radius: 10px;
-    row-gap: 60px;
     margin-top: 120px;
 }
 
 .conteudo-form{
+    height: 700px;
+    width: 600px;
     display: flex;
     flex-direction: row;
-    gap: 120px;
     align-items: center;
-    margin-right: 30px;
+    justify-content: center;
 }
 
 .conteudo-direita{
     display: flex;
     flex-direction: column;
-    width: 150px;
-    height: 379px;
+    width: 210px;
+    height: 605px;
+    margin-left: 50px;
 }
 
 .conteudo-esquerda{
     display: flex;
     flex-direction: column;
-    width: 150px;
-    height: 379px;
-    margin-left: 65px;
+    width: 210px;
+    height: 605px;
+    margin-left: 22px;
 }
 
-.botao-avancar{
+.botao-proximo{
     background-color: #07B3EA;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 200px;
     height: 50px;
     width: 150px;
     font-size: 22px;
     color: white;
     border-radius: 5px;
+}
+
+.botao-proximo:hover{
+    background-color: #4cc0e7;
+    cursor: pointer;
+}
+
+.botao-proximo:active{
+    background-color: #95d1e6;
 }
 
 .config-botao-voltar {
@@ -72,13 +87,6 @@ form{
     margin-left: 10px;
 }
 
-.sec-1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
 .config-botao-voltar:hover{
     background-color: #315892;
     cursor: pointer;
@@ -86,15 +94,6 @@ form{
 
 .config-botao-voltar:active{
     background-color: #486ca1;
-}
-
-.botao-avancar:hover{
-    background-color: #44bbe2;
-    cursor: pointer;
-}
-
-.botao-avancar:active{
-    background-color: #6fc4e0;
 }
 
 .imagem-botao-voltar{
@@ -105,7 +104,6 @@ form{
 h1{
     color: white;
     text-align: center;
-    /* display: inline-block;  */
 }
 
 h2{
@@ -120,11 +118,15 @@ label{
     font-size: 18px;
 }
 
-.inputs{
+input{
     width: 198px;
     height: 28px;
     border-radius: 5px;
     padding-left: 5px;
+}
+
+.inputs{
+    width: 180px;
 }
 
 .inputs-radio{
@@ -144,3 +146,38 @@ hr{
     column-gap: 40px;
 }
 
+.picture__input{
+    display: none;
+}
+
+.picture{
+    width: 199px;
+    height: 111px;
+    background-color: #f0ffff;
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #95a0a0;
+    border-radius: 10px;
+    border: 2px dashed #95a0a0;
+    cursor: pointer;
+    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+    overflow: hidden; 
+}
+
+.picture:hover{
+    color: #676b6b;
+    background-color: #bfc9c9;
+}
+
+.picture__image{
+    max-width: 100%;
+    height: 100px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
