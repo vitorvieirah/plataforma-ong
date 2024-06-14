@@ -5,3 +5,11 @@ function redirecionar(opcao){
         window.location.href = "../html/loginDoador.html";
     }
 }
+
+function redirecionarLogin(){
+    let usuarioLogado = localStorage.getItem('usuario');
+    if(usuarioLogado){
+        
+    }
+
+}
