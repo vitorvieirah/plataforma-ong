@@ -1,24 +1,12 @@
 var inputs = [];
 var botao;
-//tentar melhora aproveitando vetor
-let nomeFantasiaIn;
-let nomeEmpresarialIn;
-let nomeDonoIn;
-let facebookIn;
-let instagramIn; 
-let xIn;
-let tiktokIn;
-let telefoneIn;
-let whatsappIn;
-let enderecoIn;
-let siteOngIn; 
-let pixIn;
-let agenciaIn; 
-let numContaIn;
+let nomeFantasiaIn, nomeEmpresarialIn, nomeDonoIn, facebookIn, instagramIn, xIn, tiktokIn, telefoneIn, whatsappIn, enderecoIn, siteOngIn, pixIn, agenciaIn, numContaIn, sobreIn;
 
 window.onload = function() {
     inputs = document.querySelectorAll('input');
     botao = document.getElementById('botao-gravar');
+    sobreIn = document.getElementById('sobre-ong');
+
     desativaInputs();
     nomeFantasiaIn = document.getElementById('nomeFantasia-ong');
     nomeEmpresarialIn = document.getElementById('nomeEmpresarial-ong');
@@ -34,19 +22,8 @@ window.onload = function() {
     pixIn = document.getElementById('pix-ong');
     agenciaIn = document.getElementById('agencia-ong');
     numContaIn = document.getElementById('numConta-ong');
-    //puxa as informações do localstorage
-    colocarInfoNosInputs(info, idOng);
-};
-
-function alterar(){
-    ativarBotaoGravar();
-    ativarInputs();
-}
-
-function gravar(){
-    desativarBotaoGravar();
-    desativaInputs();
-    let newOng = {
+    
+    let info = {
         nomeFantasia: nomeFantasiaIn.value,
         nomeEmpresarial: nomeEmpresarialIn.value,
         nomeDono: nomeDonoIn.value,
@@ -63,8 +40,34 @@ function gravar(){
         agencia: agenciaIn.value,
         numConta: numContaIn.value
     };
-    //da classe ong
-    alterar(newOng);
+
+    colocarInfoNosInputs(info);
+};
+
+function alterar(){
+    ativarBotaoGravar();
+    ativarInputs();
+}
+
+function gravar(){
+    desativarBotaoGravar();
+    desativaInputs();
+    let newOng = {
+        nomeFantasia: nomeFantasiaIn.value,
+        nomeEmpresarial: nomeEmpresarialIn.value,
+        nomeDono: nomeDonoIn.value,
+        facebook: facebookIn.value,
+        instagram: instagramIn.value,
+        x: xIn.value,
+        tiktok: tiktokIn.value,
+        telefone: telefoneIn.value,
+        whatsapp: whatsappIn.value,
+        endereco: enderecoIn.value,
+        siteOng: siteOngIn.value,
+        pix: pixIn.value,
+        agencia: agenciaIn.value,
+        numConta: numContaIn.value
+    };
 }
 
 function desativaInputs(){
@@ -72,6 +75,11 @@ function desativaInputs(){
         input.disabled = true;
         input.style.backgroundColor = '#f3efef';
     });
+
+    if (sobreIn) {
+        sobreIn.disabled = true;
+        sobreIn.style.backgroundColor = '#f3efef';
+    }
 }
 
 function ativarInputs(){
@@ -79,30 +87,41 @@ function ativarInputs(){
         input.disabled = false;
         input.style.backgroundColor = '#ffffff';
     });
+
+    if (sobreIn) {
+        sobreIn.disabled = false;
+        sobreIn.style.backgroundColor = '#ffffff';
+    }
 }
 
 function ativarBotaoGravar(){
-    botao.style.visibility = 'visible';
+    if (botao) {
+        botao.style.visibility = 'visible';
+    }
 }
 
 function desativarBotaoGravar(){  
-    botao.style.visibility = 'hidden';
+    if (botao) {
+        botao.style.visibility = 'hidden';
+    }
 }
 
 function colocarInfoNosInputs(info){
-    nomeFantasiaIn.value = info.nomeFantasia;
-    nomeEmpresarialIn.value = info.nomeEmpresarial;
-    nomeDonoIn.value = info.nomeDono;
-    facebookIn.value = info.facebook;
-    instagramIn.value = info.instagram;
-    xIn.value = info.x;
-    tiktokIn.value = info.tiktok;
-    telefoneIn.value = info.telefone;
-    whatsappIn.value = info.whatsapp;
-    enderecoIn.value = info.endereco;
-    siteOngIn.value = info.siteOng;
-    pixIn.value = info.pix;
-    agenciaIn.value = info.agencia;
-    numContaIn.value = info.numConta;
+    if (info) {
+        nomeFantasiaIn.value = info.nomeFantasia || '';
+        nomeEmpresarialIn.value = info.nomeEmpresarial || '';
+        nomeDonoIn.value = info.nomeDono || '';
+        facebookIn.value = info.facebook || '';
+        instagramIn.value = info.instagram || '';
+        xIn.value = info.x || '';
+        tiktokIn.value = info.tiktok || '';
+        telefoneIn.value = info.telefone || '';
+        whatsappIn.value = info.whatsapp || '';
+        enderecoIn.value = info.endereco || '';
+        siteOngIn.value = info.siteOng || '';
+        pixIn.value = info.pix || '';
+        agenciaIn.value = info.agencia || '';
+        numContaIn.value = info.numConta || '';
+    }
 }
 

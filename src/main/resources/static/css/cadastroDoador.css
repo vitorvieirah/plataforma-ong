@@ -4,6 +4,20 @@ body{
     justify-content: center;
 }
 
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 45px;
+}
+
+input{
+    height: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    
+}
+
 .header-form{
     display: flex;
     flex-direction: column;
@@ -39,6 +53,8 @@ body{
     border-radius: 20px;
     color: rgba(126, 126, 126, 1);
     font-size: 25px;
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 .config-botao-voltar:hover {
@@ -58,12 +74,12 @@ body{
 
 .separador {
     border: 0;
-    margin-top: 50px;
+    margin-top: 10px;
     border-top: 2px solid #ffffff;
     width: 100%;
 }
 
-.form-container button {
+form > button {
     width: 200px;
     margin-top: 50px;
     margin-left: auto;
@@ -78,7 +94,7 @@ body{
     font-weight: bold;
 }
 
-.form-container button:hover {
+form > button:hover {
     background-color: #009acd;
 }
 
@@ -88,4 +104,40 @@ body{
     font-style: normal;
     color: white;
     font-size: 18px;
+}
+
+.picture__input{
+    display: none;
+}
+
+.picture{
+    width: 199px;
+    height: 111px;
+    background-color: #f0ffff;
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #95a0a0;
+    border-radius: 10px;
+    border: 2px dashed #95a0a0;
+    cursor: pointer;
+    transition: color 300ms ease-in-out, background 300ms ease-in-out;
+    overflow: hidden; 
+}
+
+.picture:hover{
+    color: #676b6b;
+    background-color: #bfc9c9;
+}
+
+.picture__image{
+    max-width: 100%;
+    height: 100px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
