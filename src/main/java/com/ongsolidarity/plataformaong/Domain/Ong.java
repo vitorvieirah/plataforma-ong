@@ -26,5 +26,6 @@ public class Ong {
         this.agencia = dto.agencia();
         this.nroConta = dto.nroConta();
         this.sobreNos = dto.sobreNos();
+        this.cnpj = dto.cnpj();
     }
 }
