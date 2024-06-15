@@ -8,12 +8,17 @@ import java.util.List;
 
 public class OngMapper {
     public static Ong deDtoParaDomain(OngDto dto) {
-        Ong ong = new Ong(dto.nomeFantasia(), dto.nomeEmpresarial(), dto.nomeDono(), dto.facebook(), dto.senha(), dto.instagram(), dto.tikTok(), dto.telefone(), dto.whatsApp(), dto.endereco(), dto.pix(), dto.agencia(), dto.nroConta(), dto.sobreNos(), dto.cnpj(), dto.id());
+        Ong ong = new Ong(dto.nomeFantasia(), dto.nomeEmpresarial(), dto.nomeDono(), dto.facebook(), dto.senha(),
+                dto.instagram(), dto.tikTok(), dto.telefone(), dto.whatsApp(), dto.endereco(), dto.pix(), dto.agencia(),
+                dto.nroConta(), dto.sobreNos(), dto.cnpj(), dto.tipoUsuario() ,dto.id());
         return ong;
     }
 
     public static OngDto paraDto(Ong ong){
-        OngDto dto = new OngDto(ong.getNomeFantasia(), ong.getNomeEmpresarial(), ong.getNomeDono(), ong.getFacebook(), ong.getSenha(), ong.getInstagram(), ong.getTikTok(), ong.getTelefone(), ong.getWhatsApp(), ong.getEndereco(), ong.getPix(), ong.getAgencia(), ong.getNroConta(), ong.getSobreNos(), ong.getCnpj(), ong.getId());
+        OngDto dto = new OngDto(ong.getNomeFantasia(), ong.getNomeEmpresarial(), ong.getNomeDono(), ong.getFacebook(),
+                ong.getSenha(), ong.getInstagram(), ong.getTikTok(), ong.getTelefone(), ong.getWhatsApp(),
+                ong.getEndereco(), ong.getPix(), ong.getAgencia(), ong.getNroConta(), ong.getSobreNos(), ong.getCnpj(),
+                ong.getId(), ong.getTipoUsuario());
         return dto;
     }
 
@@ -22,7 +27,10 @@ public class OngMapper {
     }
 
     public static OngEntity deDomainParaEntity(Ong ong){
-        return new OngEntity(ong.getNomeFantasia(), ong.getNomeEmpresarial(), ong.getNomeDono(), ong.getFacebook(), ong.getSenha(), ong.getInstagram(), ong.getTikTok(), ong.getTelefone(), ong.getWhatsApp(), ong.getEndereco(), ong.getPix(), ong.getAgencia(), ong.getNroConta(), ong.getSobreNos(), ong.getCnpj(), ong.getId());
+        return new OngEntity(ong.getNomeFantasia(), ong.getNomeEmpresarial(), ong.getNomeDono(), ong.getFacebook(),
+                ong.getSenha(), ong.getInstagram(), ong.getTikTok(), ong.getTelefone(), ong.getWhatsApp(),
+                ong.getEndereco(), ong.getPix(), ong.getAgencia(), ong.getNroConta(), ong.getSobreNos(), ong.getCnpj(),
+                ong.getTipoUsuario(), ong.getId());
     }
 
     public static List<Ong> deOngEntityListParaOngList(List<OngEntity> ongEntityList) {
@@ -30,6 +38,10 @@ public class OngMapper {
     }
 
     public static Ong deEntityParaDomain(OngEntity ongEntity){
-        return new Ong(ongEntity.getNomeFantasia(), ongEntity.getNomeEmpresarial(), ongEntity.getNomeDono(), ongEntity.getFacebook(), ongEntity.getSenha(), ongEntity.getInstagram(), ongEntity.getTikTok(), ongEntity.getTelefone(), ongEntity.getWhatsApp(), ongEntity.getEndereco(), ongEntity.getPix(), ongEntity.getAgencia(), ongEntity.getNroConta(), ongEntity.getSobreNos(), ongEntity.getCnpj(), ongEntity.getId());
+        return new Ong(ongEntity.getNomeFantasia(), ongEntity.getNomeEmpresarial(), ongEntity.getNomeDono(),
+                ongEntity.getFacebook(), ongEntity.getSenha(), ongEntity.getInstagram(), ongEntity.getTikTok(),
+                ongEntity.getTelefone(), ongEntity.getWhatsApp(), ongEntity.getEndereco(), ongEntity.getPix(),
+                ongEntity.getAgencia(), ongEntity.getNroConta(), ongEntity.getSobreNos(), ongEntity.getCnpj(),
+                ongEntity.getTipoUsuario() ,ongEntity.getId());
     }
 }

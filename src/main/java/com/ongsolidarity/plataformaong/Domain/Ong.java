@@ -8,7 +8,7 @@ import lombok.Getter;
 @Data
 @AllArgsConstructor
 public class Ong {
-    private String nomeFantasia, nomeEmpresarial, nomeDono, facebook, senha, instagram, tikTok, telefone, whatsApp, endereco, pix, agencia, nroConta, sobreNos, cnpj;
+    private String nomeFantasia, nomeEmpresarial, nomeDono, facebook, senha, instagram, tikTok, telefone, whatsApp, endereco, pix, agencia, nroConta, sobreNos, cnpj, tipoUsuario;
     private Long id;
 
     public void alterarInfos(OngDto dto) {

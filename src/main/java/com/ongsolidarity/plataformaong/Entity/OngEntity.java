@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class OngEntity {
-    private String nomeFantasia, nomeEmpresarial, nomeDono, facebook, senha, instagram, tikTok, telefone, whatsApp, endereco, pix, agencia, nroConta, sobreNos, cnpj;
+    private String nomeFantasia, nomeEmpresarial, nomeDono, facebook, senha, instagram, tikTok, telefone, whatsApp, endereco, pix, agencia, nroConta, sobreNos, cnpj, tipoUsuario;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
