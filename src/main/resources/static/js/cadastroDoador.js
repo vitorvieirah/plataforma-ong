@@ -1,3 +1,5 @@
+import {salvar} from '../js/doador.js';
+
 const inputFile = document.querySelector('#input-file');
 
 const pictureImage = document.querySelector('.picture__image');
@@ -31,4 +33,26 @@ inputFile.addEventListener('change', function(even){
     }else{
         pictureImage.innerHTML = pictureImageTxt;
     }
+});
+
+document.getElementById('doadorForm').addEventListener('submit', async function(event){
+    event.preventDefault();
+
+    let nomeDoador = document.getElementById('nome').value;
+    let emailDoador = document.getElementById('email').value;
+    let senhaDoador = document.getElementById('senha').value;
+    let cpfDoador = document.getElementById('cpf').value;
+    let telefoneDoador = document.getElementById('telefone').value;
+    let dataNascimentoDoador = document.getElementById('data-nascimento').value; 
+
+    let newDoador = {
+        nome: nomeDoador,
+        email: emailDoador,
+        senha: senhaDoador,
+        cpf: cpfDoador,
+        telefone: telefoneDoador,
+        dataNascimento: dataNascimentoDoador
+    };
+
+    salvar(newDoador);
 });

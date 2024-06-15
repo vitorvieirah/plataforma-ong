@@ -146,7 +146,7 @@ textarea{
 .div-botao-doar{
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 49px;
 }
 
 .invisivel{

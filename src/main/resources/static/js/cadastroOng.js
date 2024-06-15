@@ -1,3 +1,5 @@
+import {salvar} from '../js/ong.js';
+
 const inputFile = document.querySelector('#input-file');
 
 const pictureImage = document.querySelector('.picture__image');
@@ -7,6 +9,20 @@ const pictureImageTxt = 'Escolha uma imagem';
 let img = '';
 
 pictureImage.innerHTML = pictureImageTxt;
+
+document.getElementById('ongForm').addEventListener('submit', async function(event){
+    event.preventDefault();
+
+    let infoOng = localStorage.getItem('info-ongs');
+    
+    if(infoOng){
+        let infoOngJson = JSON.parse(infoOng);
+        let textAreaValue = document.querySelector('textarea').value;
+        infoOngJson.sobreOng = textAreaValue;
+
+        salvar(infoOngJson);
+    }
+});
 
 inputFile.addEventListener('change', function(even){
     const inputTarget = even.target;
@@ -35,9 +51,6 @@ inputFile.addEventListener('change', function(even){
 
 
 function buttonProximo(){
-    let infoOngs = localStorage.getItem('info-ongs');
-    let ongPart1 = infoOngs ? JSON.parse(infoOngs) : {};
-
     let nomeFantasiaIn = document.getElementById('nomeFantasia-ong').value;
     let nomeEmpresarialIn = document.getElementById('nomeEmpresarial-ong').value;
     let nomeDonoIn = document.getElementById('nomeDono-ong').value;

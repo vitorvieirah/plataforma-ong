@@ -30,9 +30,7 @@
             </ul>
 
             <div class="perfil-centro">
-                <button class="button-perfil">
-                    <a href=""></a>
-                </button>
+                <a href="../html/perfilDoador.html"><button class="button-perfil"></button></a>
             </div>
         </nav>
     </header>
@@ -43,26 +41,26 @@
             <div class="info-perfil">
                 <div>
                     <label for="nome">Nome:</label>
-                    <input type="text" id="nome" value="Nome do Usuário" readonly>
+                    <input type="text" id="input-nome" value="" readonly>
                 </div>
                 <div>
                     <label for="email">Email:</label>
-                    <input type="email" id="email" value="email@exemplo.com" readonly>
+                    <input type="email" id="input-email" value="" readonly>
                 </div>
                 <div>
                     <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" value="(00) 00000-0000" readonly>
+                    <input type="tel" id="input-telefone" value="" readonly>
                 </div>
                 <div>
                     <label for="cpf">CPF:</label>
-                    <input type="text" id="cpf" value="000.000.000-00" readonly>
+                    <input type="text" id="input-cpf" value="" readonly>
                 </div>
                 <div>
                     <label for="dataNascimento">Aniversário:</label>
-                    <input type="date" id="dataNascimento" value="2000-01-01" readonly>
+                    <input type="date" id="input-aniversario" value="" readonly>
                 </div>
                 <button id="editar-btn">Alterar</button>
-                <button id="salvar-btn" style="display:none;">Salvar</button>
+                <button id="salvar-btn" style="display:none;" onclick="gravar()">Salvar</button>
             </div>
         </div>
     </main>
@@ -82,6 +80,7 @@
     
         </div>
     </footer>
-    <script src="../js/perfilDoador.js"></script>
+    <script type="module" src="../js/perfilDoador.js"></script>
+    <script type="module" src="../js/doador.js"></script>
 </body>
 </html>

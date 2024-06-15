@@ -31,11 +31,14 @@
 }
 
 .position-button-ordenar{
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-left: 10px;
 }
 
 .pesquisa-listagem{
-    display: block;
+    display: flex;
     margin-top: 70px;
     margin-left: 200px;
 }

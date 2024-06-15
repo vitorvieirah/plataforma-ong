@@ -1,3 +1,5 @@
+import {salvar} from '../js/ong.js';
+
 var inputs = [];
 var botao;
 let nomeFantasiaIn, nomeEmpresarialIn, nomeDonoIn, facebookIn, instagramIn, xIn, tiktokIn, telefoneIn, whatsappIn, enderecoIn, siteOngIn, pixIn, agenciaIn, numContaIn, sobreIn;
@@ -6,8 +8,8 @@ window.onload = function() {
     inputs = document.querySelectorAll('input');
     botao = document.getElementById('botao-gravar');
     sobreIn = document.getElementById('sobre-ong');
-
     desativaInputs();
+
     nomeFantasiaIn = document.getElementById('nomeFantasia-ong');
     nomeEmpresarialIn = document.getElementById('nomeEmpresarial-ong');
     nomeDonoIn = document.getElementById('nomeDono-ong');
@@ -23,26 +25,29 @@ window.onload = function() {
     agenciaIn = document.getElementById('agencia-ong');
     numContaIn = document.getElementById('numConta-ong');
     
-    let info = {
-        nomeFantasia: nomeFantasiaIn.value,
-        nomeEmpresarial: nomeEmpresarialIn.value,
-        nomeDono: nomeDonoIn.value,
-        facebook: facebookIn.value,
-        senha: senhaIn.value,
-        instagram: instagramIn.value,
-        x: xIn.value,
-        tiktok: tiktokIn.value,
-        telefone: telefoneIn.value,
-        whatsapp: whatsappIn.value,
-        endereco: enderecoIn.value,
-        siteOng: siteOngIn.value,
-        pix: pixIn.value,
-        agencia: agenciaIn.value,
-        numConta: numContaIn.value
-    };
+    let ong = JSON.parse(localStorage.getItem('ong'));
 
-    colocarInfoNosInputs(info);
+    // let info = {
+    //     nomeFantasia: nomeFantasiaIn.value,
+    //     nomeEmpresarial: nomeEmpresarialIn.value,
+    //     nomeDono: nomeDonoIn.value,
+    //     facebook: facebookIn.value,
+    //     senha: senhaIn.value,
+    //     instagram: instagramIn.value,
+    //     x: xIn.value,
+    //     tiktok: tiktokIn.value,
+    //     telefone: telefoneIn.value,
+    //     whatsapp: whatsappIn.value,
+    //     endereco: enderecoIn.value,
+    //     siteOng: siteOngIn.value,
+    //     pix: pixIn.value,
+    //     agencia: agenciaIn.value,
+    //     numConta: numContaIn.value
+    // };
+
+    colocarInfoNosInputs(ong);
 };
+
 
 function alterar(){
     ativarBotaoGravar();
@@ -68,6 +73,8 @@ function gravar(){
         agencia: agenciaIn.value,
         numConta: numContaIn.value
     };
+    localStorage.setItem('ong', JSON.stringify(newOng));
+    salvar(newOng);
 }
 
 function desativaInputs(){
@@ -124,4 +131,7 @@ function colocarInfoNosInputs(info){
         numContaIn.value = info.numConta || '';
     }
 }
+
+window.alterar = alterar;
+window.gravar = gravar;
 

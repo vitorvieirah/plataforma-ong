@@ -1,26 +1,4 @@
-const URL = "http://localhost:8080/ongs"
-
-document.getElementById('doadorForm').addEventListener('submit', async function(event){
-    event.preventDefault();
-
-    let nomeDoador = document.getElementById('nome').value;
-    let emailDoador = document.getElementById('email').value;
-    let senhaDoador = document.getElementById('senha').value;
-    let cpfDoador = document.getElementById('cpf').value;
-    let telefoneDoador = document.getElementById('telefone').value;
-    let dataNascimentoDoador = document.getElementById('data-nascimento').value; 
-
-    let newDoador = {
-        nome: nomeDoador,
-        email: emailDoador,
-        senha: senhaDoador,
-        cpf: cpfDoador,
-        telefone: telefoneDoador,
-        dataNascimento: dataNascimentoDoador
-    };
-
-    await salvar(newDoador);
-});
+const URL = "http://localhost:8080/Ongs"
 
 async function logar(){
     let email = document.getElementById('email-doador').value;
@@ -40,7 +18,7 @@ async function logar(){
 }
 
 
-async function buscarPorEmail(email){
+export async function buscarPorEmail(email){
     let path = `${URL}/${email}`;
     let data;
 
@@ -54,7 +32,7 @@ async function buscarPorEmail(email){
     return data;
 }
 
-async function salvar(ong){
+export async function salvar(ong){
     let parametros = {
         method: "POST",
         headers:{
