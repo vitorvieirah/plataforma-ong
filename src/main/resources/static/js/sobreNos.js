@@ -8,6 +8,7 @@ function redirecionar(opcao){
 
 function redirecionarLogin(){
     let usuarioLogado = localStorage.getItem('usuario');
+    usuarioLogado = JSON.parse(usuarioLogado);
     if(usuarioLogado){
         
     }
