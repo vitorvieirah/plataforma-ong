@@ -10,6 +10,7 @@ import lombok.Getter;
 public class Ong {
     private String nomeFantasia, nomeEmpresarial, nomeDono, facebook, senha, instagram, tikTok, telefone, whatsApp, endereco, pix, agencia, nroConta, sobreNos, cnpj;
     private Long id;
+    private String imagem;
 
     public void alterarInfos(OngDto dto) {
         this.nomeFantasia = dto.nomeFantasia();
