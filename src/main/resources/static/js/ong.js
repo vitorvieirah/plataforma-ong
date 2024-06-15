@@ -1,6 +1,6 @@
 const URL = "http://localhost:8080/ongs";
 
-async function alterar(newOng, id){
+export async function alterar(newOng, id){
     let path = `${URL}/${id}`;
 
     let parametros = {

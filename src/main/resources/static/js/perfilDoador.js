@@ -1,4 +1,4 @@
-import {salvar} from '../js/doador.js';
+import {alterar} from '../js/doador.js';
 
 let inputNome, inputEmail, inputTelefone, inputCpf, inputAniversario;
 
@@ -60,7 +60,7 @@ function getValueInputs(){
 
 function gravar(){
     let doador = getValueInputs();
-    salvar(doador);
+    alterar(doador);
     localStorage.setItem('doador', JSON.stringify(doador));
 }
 

@@ -1,4 +1,4 @@
-import {salvar} from '../js/ong.js';
+import {alterar} from '../js/ong.js';
 
 var inputs = [];
 var botao;
@@ -49,7 +49,7 @@ window.onload = function() {
 };
 
 
-function alterar(){
+function buttonAlterar(){
     ativarBotaoGravar();
     ativarInputs();
 }
@@ -74,7 +74,7 @@ function gravar(){
         numConta: numContaIn.value
     };
     localStorage.setItem('ong', JSON.stringify(newOng));
-    salvar(newOng);
+    alterar(newOng);
 }
 
 function desativaInputs(){
@@ -132,6 +132,6 @@ function colocarInfoNosInputs(info){
     }
 }
 
-window.alterar = alterar;
+window.alterar = buttonAlterar;
 window.gravar = gravar;
 
