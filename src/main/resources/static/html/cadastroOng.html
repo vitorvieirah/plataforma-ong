@@ -11,7 +11,7 @@
     <title>Cadastro de ong</title>
 </head>
 <body>
-    <section class="sec-1">
+    <main>
         <div class="formulario-cadastro-ong">
             <header>
                 <a href="../html/getwayCadastro.html">
@@ -19,84 +19,90 @@
                 </a>
                 <h1>CADASTRO</h1>
             </header>
-            <div class="conteudo-form">
-                <div class="conteudo-esquerda">
-                    <div>
-                        <label for="nomeFantasia">Digite o nome fantasia</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
-                        <label for="nomeEmpresarial">Nome empresarial</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
-                        <label for="nomeDosSocios">Nome do dono</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div style="margin-top: px;">
-                        <label for="dadosDoacao">Dados doação</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
-                        <label for="facebook">Facebook</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
-                        <label for="senha">Senha</label>
-                        <input class="inputs" type="password">
-                    </div><br>
-                    <div>
-                        <label for="instagram">Instagram</label>
-                        <input class="inputs" type="text">
+            <form id="ongForm">
+                <div class = "conteudo-form">
+                    <div class="conteudo-esquerda">
+                        <div class="inputs">
+                            <label for="nomeFantasia">Digite o nome fantasia</label>
+                            <input type="text" id="nomeFantasia-ong">
+                        </div><br>
+                        <div class="inputs">
+                            <label for="nomeEmpresarial">Nome empresarial</label>
+                            <input type="text" id="nomeEmpresarial-ong">
+                        </div><br>
+                        <div class="inputs">
+                            <label for="nomeDosSocios">Nome do dono</label>
+                            <input type="text" id="nomeDono-ong">
+                        </div><br>
+                        <div class="inputs">
+                            <label for="facebook">Facebook</label>
+                            <input type="text" id="facebook-ong">
+                        </div><br>
+                        <div class="inputs">
+                            <label for="senha">Senha</label>
+                            <input type="password" id="senha-ong">
+                        </div><br>
+                        <div class="inputs">
+                            <label for="instagram">Instagram</label>
+                            <input type="text" id="instagram-ong">
+                        </div >
+                        <div style="margin-top: 15px;" class="inputs">
+                            <label for="x">X</label>
+                            <input type="text" id="x-ong">
+                        </div>
+                        <div style="margin-top: 22px;" class="inputs">
+                            <label class="picture">
+                                <input type="file" accept="image/*" class="picture__input" id="input-file">
+                                <span class="picture__image"></span>
+                            </label>
+                        </div>
                     </div>
-                    <div style="margin-top: 17px;">
-                        <label for="x">X</label>
-                        <input class="inputs" type="text">
-                    </div>
-                </div>
-        
-                <div class="conteudo-direita">
-                    <div>
-                        <label for="tikTok">TikTok</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
-                        <label for="telefone">Telefone</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
-                        <label for="whatsapp">Whatsapp</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
-                        <label for="endereco">Endereço</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div id="div-site-ong">
-                        <label for="siteOng">Site da ong</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <h2>Formas de doação</h2>
-                    <hr>
-                    <div style="margin-top: 27px;">
-                        <label for="pix">Pix</label>
-                        <input class="inputs" type="text">
-                    </div><br>
-                    <div>
+            
+                    <div class="conteudo-direita">
+                        <div class="inputs">
+                            <label for="tikTok">TikTok</label>
+                            <input type="text" id="tiktok-ong">
+                        </div><br>
+                        <div class="inputs">
+                            <label for="telefone">Telefone</label>
+                            <input type="text" id="telefone-ong">
+                        </div><br>
+                        <div class="inputs">
+                            <label for="whatsapp">Whatsapp</label>
+                            <input type="text" id="whatsapp-ong">
+                        </div><br>
+                        <div class="inputs">
+                            <label for="endereco">Endereço</label>
+                            <input type="text" id="endereco-ong">
+                        </div><br>
+                        <div id="div-site-ong">
+                            <label for="siteOng">Site da ong</label>
+                            <input type="text" id="siteOng-ong">
+                        </div><br>
+                        <h2>Formas de doação</h2>
+                        <hr>
+                        <div style="margin-top: 27px;" class="inputs">
+                            <label for="pix">Pix</label>
+                            <input type="text" id="pix-ong">
+                        </div><br>
                         <div>
-                            <label for="agencia">Agencia</label>
-                            <input class="inputs" type="text">
+                            <div class="inputs">
+                                <label for="agencia">Agencia</label>
+                                <input type="text" id="agencia-ong">
+                            </div>
+                            <div style="margin-top: 18px;" class="inputs">
+                                <label for="numeroConta">Numero da conta</label>
+                                <input type="text" id="numConta-ong">
+                            </div>
                         </div>
-                        <div style="margin-top: 18px;">
-                            <label for="numeroConta">Numero da conta</label>
-                            <input class="inputs" type="text">
-                        </div>
-                    </div>
-                </div><br>
-            </div>
-            <button type="button" class="botao-avancar">Avançar</button>
+                    </div><br>
+                </div>
+                <a href="../html/cadastroOng2.html">
+                    <button type="button" class="botao-proximo">Próximo</button>
+                </a>
+            </form>
         </div>
-    </section>
+    </main>
 
     <script src="../js/cadastroONG.js"></script>
 </body>
