@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 public class Doador {
-    private String nome, email, senha, cpf, telefone, imagemPerfil, tipoUsuario;
+    private String nome, email, senha, cpf, telefone, pathImagemPerfil, tipoUsuario;
     private LocalDate dataDeNascimento;
     private Long id;
 

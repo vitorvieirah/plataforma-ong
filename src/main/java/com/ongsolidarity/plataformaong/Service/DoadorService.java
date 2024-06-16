@@ -14,11 +14,16 @@ import java.util.Optional;
 @AllArgsConstructor
 public class DoadorService {
     private DoadorDataProvider dataProvider;
+    private FileStorageService fileService;
+
+
     public DoadorDto cadastrar(DoadorDto dto) {
+        fileService = new FileStorageService("C:\\ImagensOngSolidary");
         Doador doador = DoadorMapper.deDtoParaDomain(dto);
         if (validarDoador(doador.getEmail())){
             if (validarIdadeDoador(doador.getDataDeNascimento())){
                 doador.setTipoUsuario("DOADOR");
+                doador.setPathImagemPerfil(fileService.storeFile(dto.imagemPerfil()));
                 Doador doadorResponse = dataProvider.salvar(doador);
                 return DoadorMapper.deDomainParaDto(doadorResponse);
             }else {
