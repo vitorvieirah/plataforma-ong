@@ -18,6 +18,7 @@ public class DoadorService {
         Doador doador = DoadorMapper.deDtoParaDomain(dto);
         if (validarDoador(doador.getEmail())){
             if (validarIdadeDoador(doador.getDataDeNascimento())){
+                doador.setTipoUsuario("DOADOR");
                 Doador doadorResponse = dataProvider.salvar(doador);
                 return DoadorMapper.deDomainParaDto(doadorResponse);
             }else {
@@ -52,6 +53,7 @@ public class DoadorService {
     public void deletar(Long id) {
         dataProvider.deletar(id);
     }
+
     private boolean validarDoador(String email){
         Optional<Doador> doadorExistente = dataProvider.buscarPorEmail(email);
         return doadorExistente.isEmpty();

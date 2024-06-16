@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Data
 public class DoadorEntity {
-    private String nome, email, senha, cpf, telefone;
+    private String nome, email, senha, cpf, telefone, imagemPerfil, tipoUsuario;
     private LocalDate dataDeNascimento;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

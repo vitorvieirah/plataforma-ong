@@ -1,6 +1,6 @@
 const URL = "http://localhost:8080/Ongs"
 
-async function logar(){
+function logar(){
     let email = document.getElementById('email-doador').value;
     let senha = document.getElementById('senha-doador').value;
 
@@ -18,7 +18,7 @@ async function logar(){
 }
 
 
-export async function buscarPorEmail(email){
+async function buscarPorEmail(email){
     let path = `${URL}/${email}`;
     let data;
 
@@ -32,7 +32,7 @@ export async function buscarPorEmail(email){
     return data;
 }
 
-export async function salvar(ong){
+async function salvar(ong){
     let parametros = {
         method: "POST",
         headers:{

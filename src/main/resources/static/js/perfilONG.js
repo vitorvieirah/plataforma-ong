@@ -2,7 +2,7 @@ import {alterar} from '../js/ong.js';
 
 var inputs = [];
 var botao;
-let nomeFantasiaIn, nomeEmpresarialIn, nomeDonoIn, facebookIn, instagramIn, xIn, tiktokIn, telefoneIn, whatsappIn, enderecoIn, siteOngIn, pixIn, agenciaIn, numContaIn, sobreIn;
+let nomeFantasiaIn, nomeEmpresarialIn, nomeDonoIn, facebookIn, instagramIn, xIn, tiktokIn, telefoneIn, whatsappIn, enderecoIn, siteOngIn, pixIn, agenciaIn, numContaIn, sobreIn, img;
 
 window.onload = function() {
     inputs = document.querySelectorAll('input');
@@ -24,6 +24,7 @@ window.onload = function() {
     pixIn = document.getElementById('pix-ong');
     agenciaIn = document.getElementById('agencia-ong');
     numContaIn = document.getElementById('numConta-ong');
+    img = document.getElementById('img-perfil');
     
     let ong = JSON.parse(localStorage.getItem('ong'));
 
@@ -129,6 +130,7 @@ function colocarInfoNosInputs(info){
         pixIn.value = info.pix || '';
         agenciaIn.value = info.agencia || '';
         numContaIn.value = info.numConta || '';
+        img.src = info.imagem;
     }
 }
 
