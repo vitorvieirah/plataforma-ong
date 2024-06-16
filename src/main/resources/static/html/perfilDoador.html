@@ -6,8 +6,13 @@
     <title>Perfil do Doador</title>
     <link rel="icon" type="image/png" href="../img/logo do site.png">
 
-    <link rel="stylesheet" href="../css/perfilDoador.css">
+    <!-- Fonte Kadwa -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kadwa:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/perfilDoador.css">
     <link rel="stylesheet" href="../css/footerPadrao.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/perfilHeader.css">
@@ -17,23 +22,20 @@
         <nav>
             <div class="logo">
                 <img src="../img/logo do site.png" >
-                <select name="" id="invisivel">
-                    <option value="">DOADORDOADORDOADOR</option>
-                </select>
             </div>
-
             
             <ul class="nav-list">
-                <li class="nav-item"><a href="../html/index.html">Home</a></li>
-                <li class="nav-item"><a href="">ONGs</a></li>
-                <li class="nav-item"><a href="">Sobre Nós</a></li>
+                <a href="../html/homepageLogado.html"><li class="nav-item">Home</li></a>
+                <a href="../html/listagemONGLogado.html"><li class="nav-item">ONGs</li></a>
+                <a href="../html/sobreNosLogado.html"><li class="nav-item">Sobre Nós</li></a>
             </ul>
 
             <div class="perfil-centro">
-                <a href="../html/perfilDoador.html"><button class="button-perfil"></button></a>
+                <button class="button-perfil" onclick="redirecionarPerfil()"></button>
             </div>
         </nav>
     </header>
+
     <main>
         <h1>Seja bem-vindo, Nome.</h1>
         <div class="cartao-perfil">

@@ -1,4 +1,3 @@
-
 .botao-ordenar{
     background-color: #FFFFFF;
     border: solid 2px #B5B5B5;
@@ -44,16 +43,16 @@
 }
 
 .imagem-ong-table{
-    width: 370px;
-    height: 170px;
+    width: 290px;
+    height: 180px;
     border-radius: 10px;
 }
 
 .sobre-ong{
     display: flex;
     flex-direction: column;    
-    width: 1200px;
-    margin-bottom: 0px;
+    width: 70%;
+    margin-left: 20px;
 }
 
 .botao-ver-mais{
