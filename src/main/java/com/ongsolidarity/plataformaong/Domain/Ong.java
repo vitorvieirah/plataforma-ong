@@ -8,7 +8,7 @@ import lombok.Getter;
 @Data
 @AllArgsConstructor
 public class Ong {
-    private String nomeFantasia, nomeEmpresarial, nomeDono, facebook, senha, instagram, tikTok, telefone, whatsApp, endereco, pix, agencia, nroConta, sobreNos, cnpj;
+    private String nomeFantasia, nomeEmpresarial, nomeDono, facebook, senha, instagram, tikTok, telefone, whatsApp, endereco, pix, agencia, nroConta, sobreNos, cnpj, tipoUsuario;
     private Long id;
     private String imagem;
 
@@ -27,5 +27,6 @@ public class Ong {
         this.agencia = dto.agencia();
         this.nroConta = dto.nroConta();
         this.sobreNos = dto.sobreNos();
+        this.cnpj = dto.cnpj();
     }
 }

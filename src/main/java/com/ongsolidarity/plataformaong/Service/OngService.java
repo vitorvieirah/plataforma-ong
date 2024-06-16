@@ -15,9 +15,11 @@ import java.util.Optional;
 
 public class OngService {
     private OngDataProvider dataProvider;
+
     public OngDto cadastrar(OngDto dto) {
         Ong ong = OngMapper.deDtoParaDomain(dto);
-        if(!validarOng(ong)){
+        if(validarOng(ong)){
+            ong.setTipoUsuario("ONG");
             return OngMapper.paraDto(dataProvider.salvar(ong));
         }else{
             throw new RuntimeException("Ong já existe!");

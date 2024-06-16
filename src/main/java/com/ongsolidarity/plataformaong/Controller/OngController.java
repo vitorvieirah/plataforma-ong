@@ -27,8 +27,8 @@ public class OngController {
         return ResponseEntity.ok(ongService.consultarTodos());
     }
 
-    @GetMapping(value = "/consultarPorId/{cnpj}")
-    public ResponseEntity<OngDto> consultarPorId(@PathVariable("cnpj") String cnpj){
+    @GetMapping(value = "{cnpj}")
+    public ResponseEntity<OngDto> consultarPorCnpj(@PathVariable("cnpj") String cnpj){
         return ResponseEntity.ok(ongService.consultarPorId(cnpj));
     }
 
