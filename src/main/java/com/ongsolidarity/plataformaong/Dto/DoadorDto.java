@@ -1,2 +1,3 @@
-package com.ongsolidarity.plataformaong.Dto;public class DoadorDto {
+package com.ongsolidarity.plataformaong.Dto;
+public class DoadorDto {
 }

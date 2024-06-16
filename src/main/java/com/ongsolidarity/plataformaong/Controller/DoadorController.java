@@ -1,2 +1,3 @@
-package com.ongsolidarity.plataformaong.Controller;public class DoadorController {
+package com.ongsolidarity.plataformaong.Controller;
+public class DoadorController {
 }

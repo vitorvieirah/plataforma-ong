@@ -1,2 +1,3 @@
-package com.ongsolidarity.plataformaong.Entity;public class DoadorEntity {
+package com.ongsolidarity.plataformaong.Entity;
+public class DoadorEntity {
 }

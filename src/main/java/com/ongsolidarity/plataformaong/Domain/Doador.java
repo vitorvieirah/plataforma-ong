@@ -1,2 +1,3 @@
-package com.ongsolidarity.plataformaong.Domain;public class Doador {
+package com.ongsolidarity.plataformaong.Domain;
+public class Doador {
 }

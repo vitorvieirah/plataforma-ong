@@ -1,2 +1,3 @@
-package com.ongsolidarity.plataformaong.DataProvider;public class DoadorDataProvider {
+package com.ongsolidarity.plataformaong.DataProvider;
+public class DoadorDataProvider {
 }

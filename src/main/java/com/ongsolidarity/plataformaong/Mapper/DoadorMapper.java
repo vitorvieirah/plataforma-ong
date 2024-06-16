@@ -1,2 +1,3 @@
-package com.ongsolidarity.plataformaong.Mapper;public class DoadorMapper {
+package com.ongsolidarity.plataformaong.Mapper;
+public class DoadorMapper {
 }
