@@ -21,12 +21,6 @@ inputFile.addEventListener('change', function(event) {
             
             // Exibir a imagem no elemento HTML, se necessário
             pictureImage.innerHTML = `<img src="${imgBase64}" class="img-input-picture">`;
-
-            // Converter base64 para Blob
-            const blob = base64ToBlob(imgBase64);
-
-            // Criar um objeto File para enviar ao backend
-            imageFile = new File([blob], file.name, { type: file.type });
         });
 
         reader.readAsDataURL(file);
@@ -35,25 +29,6 @@ inputFile.addEventListener('change', function(event) {
     }
     console.log("cons 2");
 });
-
-function base64ToBlob(base64) {
-    console.log("cons 3");
-    const byteCharacters = atob(base64.split(',')[1]);
-    const byteArrays = [];
-
-    for (let offset = 0; offset < byteCharacters.length; offset += 512) {
-        const slice = byteCharacters.slice(offset, offset + 512);
-        const byteNumbers = new Array(slice.length);
-        for (let i = 0; i < slice.length; i++) {
-            byteNumbers[i] = slice.charCodeAt(i);
-        }
-        const byteArray = new Uint8Array(byteNumbers);
-        byteArrays.push(byteArray);
-    }
-
-    console.log("cons 4");
-    return new Blob(byteArrays, { type: 'image/jpeg' }); // Defina o tipo de acordo com a imagem
-}
 
 document.getElementById('doadorForm').addEventListener('submit', async function(event) {
     console.log("cons 5");
@@ -73,7 +48,7 @@ document.getElementById('doadorForm').addEventListener('submit', async function(
         'cpf': cpfDoador,
         'telefone': telefoneDoador,
         'dataDeNascimento': dataNascimentoDoador,
-        'imagemPerfil': imageFile // Enviar a imagem em base64
+        'imagemPerfil': imgBase64 // Enviar a imagem em base64
     };
 
     console.log('Dados do novo doador:', newDoador);
@@ -97,11 +72,15 @@ async function salvar(doador) {
 
     try {
         let response = await fetch(URL, parametros);
-        console.log("Response: ", response)
+        console.log("Response: ", response);
         let data = await response.json();
 
         if (response.ok) {
             console.log("Resposta do servidor:", data);
+            if (response.status === 201) {
+                window.location.href = '../html/homepageLogado.html';
+            }
+            localStorage.setItem('usuario', JSON.stringify(data));
             return data;
         } else {
             console.error("Erro na resposta do servidor:", response.status, response.statusText);

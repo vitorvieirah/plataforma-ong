@@ -11,7 +11,7 @@ function logar(){
     }else{
         if(ong.senha === senha){
             window.location.href = "../html/homepageLogado.html";
-            localStorage.setItem('ong', JSON.stringify(ong));
+            localStorage.setItem('usuario', JSON.stringify(ong));
         }else{
             console.log("Senha incorreta");
         }

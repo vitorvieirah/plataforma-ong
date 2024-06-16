@@ -6,8 +6,10 @@ import com.ongsolidarity.plataformaong.Dto.DoadorDto;
 import com.ongsolidarity.plataformaong.Mapper.DoadorMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
+import java.util.Base64;
 import java.util.Optional;
 
 @Service
@@ -18,12 +20,14 @@ public class DoadorService {
 
 
     public DoadorDto cadastrar(DoadorDto dto) {
-        fileService = new FileStorageService("C:\\ImagensOngSolidary");
+        fileService = new FileStorageService("C:\\REPOSITÓRIOS\\plataforma-ong\\src\\main\\resources\\static\\img");
         Doador doador = DoadorMapper.deDtoParaDomain(dto);
         if (validarDoador(doador.getEmail())){
             if (validarIdadeDoador(doador.getDataDeNascimento())){
                 doador.setTipoUsuario("DOADOR");
-                doador.setPathImagemPerfil(fileService.storeFile(dto.imagemPerfil()));
+                byte[] imagemBytes = Base64.getDecoder().decode(dto.imagemPerfil().split(",")[1]);
+                MultipartFile imagemFile = new ByteArrayMultipartFile(imagemBytes, "imagemPerfil");
+                doador.setPathImagemPerfil(fileService.storeFile(imagemFile));
                 Doador doadorResponse = dataProvider.salvar(doador);
                 return DoadorMapper.deDomainParaDto(doadorResponse);
             }else {
@@ -59,10 +63,19 @@ public class DoadorService {
         dataProvider.deletar(id);
     }
 
+    public String consultarImagemPerfil(Long id) {
+        Optional<Doador> doador = dataProvider.buscarPorId(id);
+        if(doador.isEmpty()){
+            throw new RuntimeException("Doador não encontrado");
+        }else {
+            return doador.get().getPathImagemPerfil();
+        }
+    }
     private boolean validarDoador(String email){
         Optional<Doador> doadorExistente = dataProvider.buscarPorEmail(email);
         return doadorExistente.isEmpty();
     }
+
     private boolean validarIdadeDoador(LocalDate data){
        int ano = data.getYear();
        int anoAtual = LocalDate.now().getYear();
