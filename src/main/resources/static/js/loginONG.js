@@ -1,10 +1,13 @@
-import {buscarPorCnpj} from '../js/ong.js';
+const URL = 'http://localhost:8080/ongs';
 
-function logar(){
+async function logar(){
     let cnpj = document.getElementById('cnpj-ong').value;
     let senha = document.getElementById('senha-ong').value;
 
-    let ong = buscarPorCnpj(cnpj);
+    let ong = await buscarPorCnpj(cnpj);
+
+    console.log(ong.senha);
+    console.log(senha);
 
     if(ong === null){
         console.log("Ong não encontrada");
@@ -16,4 +19,20 @@ function logar(){
             console.log("Senha incorreta");
         }
     }
+}
+
+
+async function buscarPorCnpj(cnpj){
+    let path = `${URL}/consultar-por-cnpj/${cnpj}`;
+    let data;
+
+    try{
+        let response = await fetch(path);
+        data = await response.json();
+        console.log(data);
+    }catch(error){
+        console.log("Erro ao consultar ong por cnpj: ", error);
+    }
+
+    return data;
 }

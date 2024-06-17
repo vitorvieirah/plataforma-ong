@@ -62,22 +62,22 @@ function gravar(){
     desativarBotaoGravar();
     desativaInputs();
     let newOng = {
-        nomeFantasia: nomeFantasiaIn,
-        nomeEmpresarial: nomeEmpresarialIn,
-        nomeDono: nomeDonoIn,
-        facebook: facebookIn,
-        instagram: instagramIn,
-        x: xIn,
-        tikTok: tiktokIn,
-        telefone: telefoneIn,
-        whatsApp: whatsappIn,
-        endereco: enderecoIn,
-        siteOng: siteOngIn,
-        pix: pixIn,
-        agencia: agenciaIn,
-        nroConta: numContaIn,
-        sobreNos: sobreIn,
-        cnpj: cnpjIn,
+        nomeFantasia: nomeFantasiaIn.value,
+        nomeEmpresarial: nomeEmpresarialIn.value,
+        nomeDono: nomeDonoIn.value,
+        facebook: facebookIn.value,
+        instagram: instagramIn.value,
+        x: xIn.value,
+        tikTok: tiktokIn.value,
+        telefone: telefoneIn.value,
+        whatsApp: whatsappIn.value,
+        endereco: enderecoIn.value,
+        siteOng: siteOngIn.value,
+        pix: pixIn.value,
+        agencia: agenciaIn.value,
+        nroConta: numContaIn.value,
+        sobreNos: sobreIn.value,
+        cnpj: cnpjIn.value,
     };
     alterar(newOng);
     newOng.id = ong.id;
@@ -157,6 +157,7 @@ async function buscarPathImagem(){
 }
 
 async function alterar(newOng){
+    console.log(newOng);
     let path = `${URL}/${ong.id}`;
 
     let parametros = {
@@ -173,5 +174,24 @@ async function alterar(newOng){
         console.log("Sucesso ao alterar informações")
     }catch(error){
         console.log("Erro ao consultar alterar dados da ong: ", error);
+    }
+}
+
+async function deletar(){
+    let path = `${URL}/${ong.id}`;
+
+    let parametros = {
+        method: "DELETE",
+        headers: {
+            "Content-type": "application/json"
+        }
+    }
+
+    try{
+        let response = await fetch(path, parametros);
+        let data = await response.json();
+        window.location.href = '../html/index.html';
+    }catch(error){
+        console.log("Erro ao deletar ong: ", error);
     }
 }
