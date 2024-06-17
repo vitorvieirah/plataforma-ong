@@ -17,16 +17,21 @@ import java.util.Optional;
 public class DoadorService {
     private DoadorDataProvider dataProvider;
     private FileStorageService fileService;
+    private Integer contador;
+    private String padraoPath;
 
 
     public DoadorDto cadastrar(DoadorDto dto) {
+         padraoPath = "imagemPerfil.jpeg";
         fileService = new FileStorageService("C:\\REPOSITÓRIOS\\plataforma-ong\\src\\main\\resources\\static\\img");
         Doador doador = DoadorMapper.deDtoParaDomain(dto);
         if (validarDoador(doador.getEmail())){
             if (validarIdadeDoador(doador.getDataDeNascimento())){
+                contador ++;
                 doador.setTipoUsuario("DOADOR");
+                String newPath = padraoPath.concat(String.valueOf(contador));
                 byte[] imagemBytes = Base64.getDecoder().decode(dto.imagemPerfil().split(",")[1]);
-                MultipartFile imagemFile = new ByteArrayMultipartFile(imagemBytes, "imagemPerfil.jpeg");
+                MultipartFile imagemFile = new ByteArrayMultipartFile(imagemBytes, newPath);
                 doador.setPathImagemPerfil(fileService.storeFile(imagemFile));
                 Doador doadorResponse = dataProvider.salvar(doador);
                 return DoadorMapper.deDomainParaDto(doadorResponse);
