@@ -1,6 +1,6 @@
 import {alterar} from '../js/doador.js';
 
-let inputNome, inputEmail, inputTelefone, inputCpf, inputAniversario;
+let inputNome, inputEmail, inputTelefone, inputCpf, inputAniversario, img;
 
 window.onload = function() {
     let doador = JSON.parse(localStorage.getItem('doador'));
@@ -40,6 +40,7 @@ function getInputs(){
     inputTelefone = document.getElementById('input-telefone');
     inputCpf = document.getElementById('input-cpf');
     inputAniversario = document.getElementById('input-aniversario');
+    img = document.getElementById('img-perfil');
 }
 
 function setInfoInputs(doador){
@@ -47,6 +48,7 @@ function setInfoInputs(doador){
     inputEmail.value = doador.email;
     inputTelefone.value = doador.telefone;
     inputAniversario.value = doador.aniversario;
+    img.src = doador.imagemPerfil;
 }
 
 function getValueInputs(){
