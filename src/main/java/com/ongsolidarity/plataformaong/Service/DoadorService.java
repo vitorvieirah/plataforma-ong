@@ -5,6 +5,8 @@ import com.ongsolidarity.plataformaong.Domain.Doador;
 import com.ongsolidarity.plataformaong.Dto.DoadorDto;
 import com.ongsolidarity.plataformaong.Mapper.DoadorMapper;
 import lombok.AllArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,16 +15,17 @@ import java.util.Base64;
 import java.util.Optional;
 
 @Service
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class DoadorService {
+    @NonNull
     private DoadorDataProvider dataProvider;
+    @NonNull
     private FileStorageService fileService;
-    private Integer contador;
-    private String padraoPath;
+    private Integer contador = 0;
+    private String padraoPath = "imagemPerfil.jpeg";
 
 
     public DoadorDto cadastrar(DoadorDto dto) {
-         padraoPath = "imagemPerfil.jpeg";
         fileService = new FileStorageService("C:\\REPOSITÓRIOS\\plataforma-ong\\src\\main\\resources\\static\\img");
         Doador doador = DoadorMapper.deDtoParaDomain(dto);
         if (validarDoador(doador.getEmail())){
