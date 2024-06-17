@@ -34,7 +34,7 @@ public class DoadorController {
         return ResponseEntity.ok(new FotoDto(foto));
     }
 
-    @PutMapping(value = "{id}")
+    @PutMapping(value = "/alterar/{id}")
     public ResponseEntity<DoadorDto> alterar(@PathVariable Long id, @RequestBody DoadorDto dto){
         DoadorDto response = service.alterar(id, dto);
         return ResponseEntity.ok(response);

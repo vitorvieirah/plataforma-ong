@@ -8,9 +8,8 @@ import lombok.Getter;
 @Data
 @AllArgsConstructor
 public class Ong {
-    private String nomeFantasia, nomeEmpresarial, nomeDono, facebook, senha, instagram, tikTok, telefone, whatsApp, endereco, pix, agencia, nroConta, sobreNos, cnpj, tipoUsuario;
+    private String nomeFantasia, nomeEmpresarial, nomeDono, facebook, senha, instagram, x, tikTok, telefone, whatsApp, endereco, siteOng, pix, agencia, nroConta, sobreNos, cnpj, tipoUsuario, pathImagem;
     private Long id;
-    private String imagem;
 
     public void alterarInfos(OngDto dto) {
         this.nomeFantasia = dto.nomeFantasia();
@@ -19,10 +18,12 @@ public class Ong {
         this.facebook = dto.facebook();
         this.senha = dto.senha();
         this.instagram = dto.instagram();
+        this.x = dto.x();
         this.tikTok = dto.tikTok();
         this.telefone = dto.telefone();
         this.whatsApp = dto.whatsApp();
         this.endereco = dto.endereco();
+        this.siteOng = dto.siteOng();
         this.pix = dto.pix();
         this.agencia = dto.agencia();
         this.nroConta = dto.nroConta();

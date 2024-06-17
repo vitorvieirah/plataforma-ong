@@ -1,12 +1,15 @@
 package com.ongsolidarity.plataformaong.Service;
 
 import com.ongsolidarity.plataformaong.DataProvider.OngDataProvider;
+import com.ongsolidarity.plataformaong.Domain.Doador;
 import com.ongsolidarity.plataformaong.Domain.Ong;
 import com.ongsolidarity.plataformaong.Dto.OngDto;
 import com.ongsolidarity.plataformaong.Mapper.OngMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.util.Base64;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,11 +18,16 @@ import java.util.Optional;
 
 public class OngService {
     private OngDataProvider dataProvider;
+    private FileStorageService fileService;
 
     public OngDto cadastrar(OngDto dto) {
         Ong ong = OngMapper.deDtoParaDomain(dto);
+        fileService = new FileStorageService("C:\\REPOSITÓRIOS\\plataforma-ong\\src\\main\\resources\\static\\img");
         if(validarOng(ong)){
             ong.setTipoUsuario("ONG");
+            byte[] imagemBytes = Base64.getDecoder().decode(dto.pathImagem().split(",")[1]);
+            MultipartFile imagemFile = new ByteArrayMultipartFile(imagemBytes, "imagemOng.jpeg");
+            ong.setPathImagem(fileService.storeFile(imagemFile));
             return OngMapper.paraDto(dataProvider.salvar(ong));
         }else{
             throw new RuntimeException("Ong já existe!");
@@ -57,5 +65,14 @@ public class OngService {
     private boolean validarOng(Ong ong){
         Optional<Ong> ongValidation = dataProvider.buscarPorCnpjNomeSenha(ong.getCnpj(), ong.getNomeEmpresarial(), ong.getSenha());
         return ongValidation.isEmpty();
+    }
+
+    public String consultarImagemPerfil(Long id) {
+        Optional<Ong> ong = dataProvider.consultarPorId(id);
+        if(ong.isEmpty()){
+            throw new RuntimeException("Ong não encontrado");
+        }else {
+            return ong.get().getPathImagem();
+        }
     }
 }

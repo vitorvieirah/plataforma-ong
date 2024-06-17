@@ -26,7 +26,7 @@ public class DoadorService {
             if (validarIdadeDoador(doador.getDataDeNascimento())){
                 doador.setTipoUsuario("DOADOR");
                 byte[] imagemBytes = Base64.getDecoder().decode(dto.imagemPerfil().split(",")[1]);
-                MultipartFile imagemFile = new ByteArrayMultipartFile(imagemBytes, "imagemPerfil");
+                MultipartFile imagemFile = new ByteArrayMultipartFile(imagemBytes, "imagemPerfil.jpeg");
                 doador.setPathImagemPerfil(fileService.storeFile(imagemFile));
                 Doador doadorResponse = dataProvider.salvar(doador);
                 return DoadorMapper.deDomainParaDto(doadorResponse);

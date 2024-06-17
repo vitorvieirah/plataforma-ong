@@ -50,37 +50,40 @@ async function setInfoInputs(doador){
     inputTelefone.value = doador.telefone;
     inputAniversario.value = doador.dataDeNascimento;
     inputCpf.value = doador.cpf;
-    console.log(doador.id);
     let imgBd = await buscarPathImagem();
-    console.log("Imagem do banco de dados: ", imgBd.url);
-    img.src = imgBd.url;
-    console.log(img);
+    console.log(imgBd);
+    let newPath = imgBd.url.replace(/\\/g, "\\");
+    console.log(newPath);
+    img.src = newPath;
 }
 
 function getValueInputs(){
-    return doador = {
+    return newDoador = {
         nome: inputNome.value,
         email: inputEmail.value,
         telefone: inputTelefone.value,
-        aniversario: inputAniversario.value
+        dataDeNascimento: inputAniversario.value,
+        cpf: inputCpf.value,
+        id: null
     }
 }
 
 function gravar(){
-    let doador = getValueInputs();
-    alterar(doador);
-    localStorage.setItem('doador', JSON.stringify(doador));
+    let newDoador = getValueInputs();
+    alterar(newDoador);
+    newDoador.id = doador.id;
+    localStorage.setItem('usuario', JSON.stringify(newDoador));
 }
 
-async function alterar(ong){
-    let path = `${URL}/${doador.id}`;
+async function alterar(newDoador){
+    let path = `${URL}/alterar/${doador.id}`;
 
     let parametros = {
         method: "PUT",
         headers:{
             "Content-type":"application/json"
         },
-        body: JSON.stringify(ong)
+        body: JSON.stringify(newDoador)
     };
 
     let data;
@@ -95,8 +98,6 @@ async function alterar(ong){
 
 async function buscarPathImagem(){
     let path = `${URL}/${doador.id}`;
-    console.log(doador.id);
-    console.log(path);
     let data = "";
     try{
         let response = await fetch(path);
@@ -106,4 +107,25 @@ async function buscarPathImagem(){
     }
     
     return data;
+}
+
+async function deletar(){
+    let path = `${URL}/${doador.id}`;
+    let data;
+
+    let parametros = {
+        method: "DELETE",
+        headers:{
+            "Content-type": "application/json"
+        }
+    }
+
+    try{
+        let response = await fetch(path, parametros);
+        data = await response.json();
+    }catch(error){
+        console.log("Erro ao deletar doador !", error);
+    }
+
+    window.location.href = '../html/index.html';
 }
