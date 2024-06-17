@@ -2,6 +2,7 @@ package com.ongsolidarity.plataformaong.Controller;
 
 import com.ongsolidarity.plataformaong.Domain.Doador;
 import com.ongsolidarity.plataformaong.Dto.DoadorDto;
+import com.ongsolidarity.plataformaong.Dto.FotoDto;
 import com.ongsolidarity.plataformaong.Service.DoadorService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -21,13 +22,19 @@ public class DoadorController {
         return ResponseEntity.created(uri).body(response);
     }
 
-    @GetMapping (value = "{email}")
+    @GetMapping (value = "/buscar-por-email/{email}")
     public ResponseEntity<DoadorDto> buscarPorEmail(@PathVariable String email){
         DoadorDto response = service.buscarPorEmail(email);
         return ResponseEntity.ok(response);
     }
 
-    @PutMapping(value = "{id}")
+    @GetMapping(value = "{id}")
+    public ResponseEntity<FotoDto> buscarPathImagens(@PathVariable Long id){
+        String foto = service.consultarImagemPerfil(id).replace("C:\\REPOSITÓRIOS\\plataforma-ong\\src\\main\\resources\\static", "..");
+        return ResponseEntity.ok(new FotoDto(foto));
+    }
+
+    @PutMapping(value = "/alterar/{id}")
     public ResponseEntity<DoadorDto> alterar(@PathVariable Long id, @RequestBody DoadorDto dto){
         DoadorDto response = service.alterar(id, dto);
         return ResponseEntity.ok(response);

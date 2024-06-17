@@ -1,8 +1,9 @@
-import {alterar} from '../js/ong.js';
+const URL = 'http://localhost:8080/ongs';
 
 var inputs = [];
 var botao;
-let nomeFantasiaIn, nomeEmpresarialIn, nomeDonoIn, facebookIn, instagramIn, xIn, tiktokIn, telefoneIn, whatsappIn, enderecoIn, siteOngIn, pixIn, agenciaIn, numContaIn, sobreIn, img;
+let nomeFantasiaIn, nomeEmpresarialIn, nomeDonoIn, facebookIn, instagramIn, xIn, tiktokIn, telefoneIn, whatsappIn, enderecoIn, siteOngIn, pixIn, agenciaIn, numContaIn, sobreIn, img, cnpjIn;
+let ong;
 
 window.onload = function() {
     inputs = document.querySelectorAll('input');
@@ -25,8 +26,10 @@ window.onload = function() {
     agenciaIn = document.getElementById('agencia-ong');
     numContaIn = document.getElementById('numConta-ong');
     img = document.getElementById('img-perfil');
+    cnpjIn = document.getElementById('cnpj-ong');
     
-    let ong = JSON.parse(localStorage.getItem('ong'));
+    ong = JSON.parse(localStorage.getItem('usuario'));
+    console.log('Local storage: ', ong);
 
     // let info = {
     //     nomeFantasia: nomeFantasiaIn.value,
@@ -65,17 +68,20 @@ function gravar(){
         facebook: facebookIn.value,
         instagram: instagramIn.value,
         x: xIn.value,
-        tiktok: tiktokIn.value,
+        tikTok: tiktokIn.value,
         telefone: telefoneIn.value,
-        whatsapp: whatsappIn.value,
+        whatsApp: whatsappIn.value,
         endereco: enderecoIn.value,
         siteOng: siteOngIn.value,
         pix: pixIn.value,
         agencia: agenciaIn.value,
-        numConta: numContaIn.value
+        nroConta: numContaIn.value,
+        sobreNos: sobreIn.value,
+        cnpj: cnpjIn.value,
     };
-    localStorage.setItem('ong', JSON.stringify(newOng));
     alterar(newOng);
+    newOng.id = ong.id;
+    localStorage.setItem('usuario', JSON.stringify(newOng));
 }
 
 function desativaInputs(){
@@ -114,26 +120,78 @@ function desativarBotaoGravar(){
     }
 }
 
-function colocarInfoNosInputs(info){
-    if (info) {
-        nomeFantasiaIn.value = info.nomeFantasia || '';
-        nomeEmpresarialIn.value = info.nomeEmpresarial || '';
-        nomeDonoIn.value = info.nomeDono || '';
-        facebookIn.value = info.facebook || '';
-        instagramIn.value = info.instagram || '';
-        xIn.value = info.x || '';
-        tiktokIn.value = info.tiktok || '';
-        telefoneIn.value = info.telefone || '';
-        whatsappIn.value = info.whatsapp || '';
-        enderecoIn.value = info.endereco || '';
-        siteOngIn.value = info.siteOng || '';
-        pixIn.value = info.pix || '';
-        agenciaIn.value = info.agencia || '';
-        numContaIn.value = info.numConta || '';
-        img.src = info.imagem;
+async function colocarInfoNosInputs(info){
+    
+    nomeFantasiaIn.value = info.nomeFantasia;
+    nomeEmpresarialIn.value = info.nomeEmpresarial;
+    nomeDonoIn.value = info.nomeDono;
+    facebookIn.value = info.facebook;
+    instagramIn.value = info.instagram;
+    xIn.value = info.x;
+    tiktokIn.value = info.tikTok;
+    telefoneIn.value = info.telefone;
+    whatsappIn.value = info.whatsApp;
+    enderecoIn.value = info.endereco;
+    siteOngIn.value = info.siteOng;
+    pixIn.value = info.pix;
+    agenciaIn.value = info.agencia;
+    numContaIn.value = info.nroConta;
+    cnpjIn.value = info.cnpj;
+    let imgBd = await buscarPathImagem();
+    let newPath = imgBd.url.replace(/\\/g, "\\");
+    img.src = newPath;
+    sobreIn.value = info.sobreNos;
+}
+
+async function buscarPathImagem(){
+    let path = `${URL}/${ong.id}`;
+    let data = "";
+    try{
+        let response = await fetch(path);
+        data = await response.json();
+    }catch(error){
+        console.log("Erro ao consultar imagem !", error);
+    }
+    
+    return data;
+}
+
+async function alterar(newOng){
+    console.log(newOng);
+    let path = `${URL}/${ong.id}`;
+
+    let parametros = {
+        method: "PUT",
+        headers:{
+            "Content-type":"application/json"
+        },
+        body: JSON.stringify(newOng)
+    };
+
+    try{
+        let response = await fetch(path, parametros);
+        data = await response.json();
+        console.log("Sucesso ao alterar informações")
+    }catch(error){
+        console.log("Erro ao consultar alterar dados da ong: ", error);
     }
 }
 
-window.alterar = buttonAlterar;
-window.gravar = gravar;
+async function deletar(){
+    let path = `${URL}/${ong.id}`;
 
+    let parametros = {
+        method: "DELETE",
+        headers: {
+            "Content-type": "application/json"
+        }
+    }
+
+    try{
+        let response = await fetch(path, parametros);
+        let data = await response.json();
+        window.location.href = '../html/index.html';
+    }catch(error){
+        console.log("Erro ao deletar ong: ", error);
+    }
+}

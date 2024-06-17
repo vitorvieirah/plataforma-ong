@@ -30,13 +30,13 @@ public class OngDataProvider {
         return OngMapper.deEntityParaDomain(ongEntity);
     }
 
-    public List<Ong> consultarTodos() {
+    public List<Ong> consultarPorNome(String nome) {
         List<OngEntity> ongEntity;
         try {
-            ongEntity = repository.findAll();
+            ongEntity = repository.findByNomeFantasia(nome);
         }catch (Exception exception){
-            log.error("Erro ao encontrar Ongs no banco de dados!!!", exception);
-            throw new OngException("Erro ao encontrar Ongs no banco de dados!!!");
+            log.error("Erro ao encontrar Ong por nome!!!", exception);
+            throw new OngException("Erro ao encontrar Ong por nome!!!");
         }
         return OngMapper.deOngEntityListParaOngList(ongEntity);
     }
@@ -81,5 +81,17 @@ public class OngDataProvider {
             throw new OngException("Erro ao encontrar Ong no banco de dados!!!");
         }
         return ongEntity.map(OngMapper::deEntityParaDomain);
+    }
+
+    public List<Ong> consultarTodos() {
+        List<OngEntity> ongEntityList;
+        try{
+            ongEntityList = repository.findAll();
+        }catch (Exception exception){
+            log.error("Erro ao consultar todas as ongs", exception);
+            throw new OngException("Erro ao consultar todas as ongs");
+        }
+
+        return OngMapper.deOngEntityListParaOngList(ongEntityList);
     }
 }

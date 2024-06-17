@@ -32,9 +32,9 @@
 
             
             <ul class="nav-list">
-                <li class="nav-item"><a href="../html/index.html">Home</a></li>
-                <li class="nav-item"><a href="">ONGs</a></li>
-                <li class="nav-item"><a href="">Sobre Nós</a></li>
+                <li class="nav-item"><a href="../html/homepageLogado.html">Home</a></li>
+                <li class="nav-item"><a href="../html/listagemONGLogado.html">ONGs</a></li>
+                <li class="nav-item"><a href="../html/sobreNosLogado.html">Sobre Nós</a></li>
             </ul>
 
             <div class="perfil-centro">
@@ -73,7 +73,7 @@
                 <div class="div-botao-doar">
                     <div class="inputs-labels">
                         <label for="">Cnpj</label>
-                        <input type="text">
+                        <input type="text" id="cnpj-ong">
                     </div>
                     <button class="button-doar">$ Doar</button>
                 </div>
@@ -104,7 +104,7 @@
             <div>
                 <button class="button-gravar" id="botao-gravar" onclick="gravar()">Gravar</button>
                 <button class="button-alterar" onclick="buttonAlterar()">Alterar</button>
-                <button class="button-alterar" >Deletar</button>
+                <button class="button-alterar" onclick="deletar()">Deletar</button>
             </div>
         </section>
     </main>
@@ -125,7 +125,6 @@
         </div>
     </footer>
 
-    <script type="module" src="../js/ong.js"></script>
-    <script type="module" src="../js/perfilONG.js"></script>
+    <script src="../js/perfilONG.js"></script>
 </body>
 </html>

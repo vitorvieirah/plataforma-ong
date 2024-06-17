@@ -3,37 +3,14 @@ const URL = "http://localhost:8080/doadores";
 const inputFile = document.querySelector('#input-file');
 const pictureImage = document.querySelector('.picture__image');
 const pictureImageTxt = 'Escolha uma imagem';
-
-// let imgBase64 = ''; // Variável para armazenar a imagem em base64
-
-// pictureImage.innerHTML = pictureImageTxt;
-
-// inputFile.addEventListener('change', function(event) {
-//     const inputTarget = event.target;
-//     const file = inputTarget.files[0];
-
-//     if (file) {
-//         const reader = new FileReader();
-
-//         reader.addEventListener('load', function(event) {
-//             imgBase64 = event.target.result; // Armazena a imagem em base64
-            
-//             // Exibir a imagem no elemento HTML, se necessário
-//             pictureImage.innerHTML = `<img src="${imgBase64}" class="img-input-picture">`;
-//         });
-
-//         reader.readAsDataURL(file);
-//     } else {
-//         pictureImage.innerHTML = pictureImageTxt;
-//     }
-// });
-
-let img = '';
+let imgBase64 = '';
+let imageFile = '';
 
 pictureImage.innerHTML = pictureImageTxt;
 
-inputFile.addEventListener('change', function(even){
-    const inputTarget = even.target;
+inputFile.addEventListener('change', function(event) {
+    console.log("cons 1");
+    const inputTarget = event.target;
     const file = inputTarget.files[0];
 
     if(file){
@@ -55,10 +32,12 @@ inputFile.addEventListener('change', function(even){
     }else{
         pictureImage.innerHTML = pictureImageTxt;
     }
+    console.log("cons 2");
 });
 
 
 document.getElementById('doadorForm').addEventListener('submit', async function(event) {
+    console.log("cons 5");
     event.preventDefault();
 
     console.log("Teste da imagem: ", img);
@@ -87,6 +66,7 @@ document.getElementById('doadorForm').addEventListener('submit', async function(
 });
 
 async function salvar(doador) {
+    console.log("cons 6");
     let parametros = {
         method: "POST",
         headers: {
@@ -100,11 +80,15 @@ async function salvar(doador) {
 
     try {
         let response = await fetch(URL, parametros);
-        console.log("Response: ", response)
+        console.log("Response: ", response);
         let data = await response.json();
 
         if (response.ok) {
             console.log("Resposta do servidor:", data);
+            if (response.status === 201) {
+                window.location.href = '../html/homepageLogado.html';
+            }
+            localStorage.setItem('usuario', JSON.stringify(data));
             return data;
         } else {
             console.error("Erro na resposta do servidor:", response.status, response.statusText);

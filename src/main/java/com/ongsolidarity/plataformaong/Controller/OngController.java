@@ -1,5 +1,6 @@
 package com.ongsolidarity.plataformaong.Controller;
 
+import com.ongsolidarity.plataformaong.Dto.FotoDto;
 import com.ongsolidarity.plataformaong.Dto.OngDto;
 import com.ongsolidarity.plataformaong.Service.OngService;
 import lombok.AllArgsConstructor;
@@ -10,7 +11,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Ongs")
+@RequestMapping("/ongs")
 @AllArgsConstructor
 
 public class OngController {
@@ -18,7 +19,7 @@ public class OngController {
     @PostMapping
     public ResponseEntity<OngDto> cadastrar(@RequestBody OngDto dto, UriComponentsBuilder uriBuilder){
         OngDto response = ongService.cadastrar(dto);
-        var uri = uriBuilder.path("/Ongs/{id}").buildAndExpand(response.id()).toUri();
+        var uri = uriBuilder.path("/ongs/{id}").buildAndExpand(response.id()).toUri();
         return ResponseEntity.created(uri).body(response);
     }
 
@@ -27,9 +28,20 @@ public class OngController {
         return ResponseEntity.ok(ongService.consultarTodos());
     }
 
-    @GetMapping(value = "{cnpj}")
+    @GetMapping(value = "/consultar-por-nome/{nome}")
+    public ResponseEntity<List<OngDto>> consultarPorNome(@PathVariable("nome") String nome){
+        return ResponseEntity.ok(ongService.consultarPorNome(nome));
+    }
+
+    @GetMapping(value = "/consultar-por-cnpj/{cnpj}")
     public ResponseEntity<OngDto> consultarPorCnpj(@PathVariable("cnpj") String cnpj){
         return ResponseEntity.ok(ongService.consultarPorId(cnpj));
+    }
+
+    @GetMapping(value = "{id}")
+    public ResponseEntity<FotoDto> buscarPathImagens(@PathVariable Long id){
+        String foto = ongService.consultarImagemPerfil(id).replace("C:\\REPOSITÓRIOS\\plataforma-ong\\src\\main\\resources\\static", "..");
+        return ResponseEntity.ok(new FotoDto(foto));
     }
 
     @PutMapping(value = "{id}")

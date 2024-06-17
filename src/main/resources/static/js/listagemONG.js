@@ -1,8 +1,12 @@
-import {pesquisarPorNome} from '../js/ong.js';
-import {buscarPorId} from '../js/ong.js';
+const URL = 'http://localhost:8080/ongs'
 
 const imgSetaParaCima = '../img/icone-para-cima.png';
 const imgSetaParaBaixo = '../img/icone-para-baixo.png';
+
+window.onload = async function() {
+    let list = await pesquisarTodos();
+    atualizarTabela(list);
+}
 
 function alteraImagemBotaoPesquisa() {
     let img = document.getElementById('imagem-botao');
@@ -24,6 +28,14 @@ function alteraImagemBotaoPesquisa() {
     }
 }
 
+function redirecionar(opcao){
+    if (opcao.value === "ong") {
+        window.location.href = "../html/loginONG.html";
+    }else{
+        window.location.href = "../html/loginDoador.html";
+    }
+}
+
 function redirecionarPerfil(){
     let usuarioLogado = localStorage.getItem('usuario');
     usuarioLogado = JSON.parse(usuarioLogado);
@@ -36,30 +48,31 @@ function redirecionarPerfil(){
     }
 }
 
-function pesquisar(){
+async function pesquisar(){
     let inputPesquisa = document.getElementById('pesquisa').value;
 
-    let listOng = pesquisarPorNome(inputPesquisa);
+    let listOng = await pesquisarPorNome(inputPesquisa);
 
     atualizarTabela(listOng);
 }
 
 function atualizarTabela(listOng){
+    console.log(listOng);
     let table = document.querySelector('tbody');
     table.innerHTML = '';
 
-    listOng.forEach(ong => {
+    listOng.forEach(async ong => {
         let linha = document.createElement('tr');
-        linha.tr = `
+        let img = await buscarPathImagem(ong.id);
+        let newPath = img.url.replace(/\\/g, "\\");
+
+        console.log(ong);
+        linha.innerHTML = `
             <td>
-                <img class="imagem-ong-table" src="${ong.imagem}" alt="imagem exemplo ong">
+                <img class="imagem-ong-table" src="${newPath}" alt="imagem exemplo ong">
                 <div class="sobre-ong">
-                    <h2>Titulo ong</h2>
-                    <p>${ong.sobre}</p>
-                </div>
-                <div class="div-botao-ver-mais">
-                    <button></button>
-                    <a href=""><button class="botao-ver-mais" onclick="redirecionarPerfilOngList(${ong.id})">Ver mais</button></a>
+                    <h2>${ong.nomeFantasia}</h2>
+                    <p>${ong.sobreNos}</p>
                 </div>    
             </td>
         `;
@@ -68,8 +81,43 @@ function atualizarTabela(listOng){
     });
 }
 
-function redirecionarPerfilOngList(id){
-    let ong = buscarPorId(id);
-    localStorage.setItem('ong', JSON.stringify(ong));
-    window.location.href = '../html/perfilONG.html';
+async function pesquisarPorNome(inputPesquisa){
+    let path = `${URL}/consultar-por-nome/${inputPesquisa}`;
+    let data;
+
+    try{
+        let parametros = await fetch(path);
+        data = parametros.json();
+    }catch(error){
+        console.log("Erro ao consultar por nome:", error);
+    }
+
+    return data;
+}
+
+async function buscarPathImagem(id){
+    let path = `${URL}/${id}`;
+    let data = "";
+    try{
+        let response = await fetch(path);
+        data = await response.json();
+        console.log("Dentro da req: ", data);
+    }catch(error){
+        console.log("Erro ao consultar imagem !", error);
+    }
+    
+    return data;
+}
+
+async function pesquisarTodos(){
+    let data;
+    
+    try{
+        let response = await fetch(URL);
+        data = await response.json(); 
+    }catch(error){
+        console.log("Erro ao consultar todos: ", error);
+    }
+
+    return data;
 }

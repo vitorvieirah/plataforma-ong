@@ -32,7 +32,7 @@
             </ul>
 
             <div class="perfil-centro">
-                <button class="button-perfil" onclick="redirecionar()"></button>
+                <button class="button-perfil" onclick="redirecionarPerfil()"></button>
             </div>
         </nav>
     </header>
@@ -41,10 +41,7 @@
         <div class="pesquisa-listagem">
             <input type="text" class="position-input" id="pesquisa">
             <div class="position-button-ordenar">
-                <button type="button" class="botao-ordenar" style="width: 90px;" onclick="">Pesquisar</button>
-                <button type="button" class="botao-ordenar" onclick="alteraImagemBotaoPesquisa()">
-                    <label id="label-botao-ordenar" class="label-botao-ordenar" for="alfabetica">A</label> <img id="imagem-botao" class="imagem-botao-ordenar" src="../img/icone-para-cima.png" alt="seta para cima de ordenação">
-                </button>
+                <button type="button" class="botao-ordenar" style="width: 90px;" onclick="pesquisar()">Pesquisar</button>
             </div>
         </div>
     
@@ -60,7 +57,6 @@
         </table>
     </main>
 
-    <script type="module" src="../js/listagemONG.js"></script>
-    <script type="module" src="../js/ong.js"></script>
+    <script src="../js/listagemONG.js"></script>
 </body>
 </html>

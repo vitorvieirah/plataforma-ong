@@ -39,7 +39,7 @@
     <main>
         <h1>Seja bem-vindo, Nome.</h1>
         <div class="cartao-perfil">
-            <img src="" alt="" class="foto-perfil ">
+            <img src="" alt="" class="foto-perfil" id="img-perfil">
             <div class="info-perfil">
                 <div>
                     <label for="nome">Nome:</label>
@@ -63,6 +63,7 @@
                 </div>
                 <button id="editar-btn">Alterar</button>
                 <button id="salvar-btn" style="display:none;" onclick="gravar()">Salvar</button>
+                <button id="deletar-btn" onclick="deletar()">Deletar</button>
             </div>
         </div>
     </main>
@@ -82,7 +83,6 @@
     
         </div>
     </footer>
-    <script type="module" src="../js/perfilDoador.js"></script>
-    <script type="module" src="../js/doador.js"></script>
+    <script src="../js/perfilDoador.js"></script>
 </body>
 </html>
