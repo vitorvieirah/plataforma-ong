@@ -16,5 +16,6 @@ public interface OngRepository extends JpaRepository<OngEntity,Long> {
 
     @Query("SELECT og FROM Ong og WHERE og.cnpj = :cnpj AND og.nomeEmpresarial = :nomeEmpresarial AND og.senha = :senha")
     Optional<OngEntity> findByCnpjNomeSenha(String cnpj, String nomeEmpresarial, String senha);
+
     List<OngEntity> findByNomeFantasia(String nome);
 }
